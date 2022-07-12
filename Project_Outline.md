@@ -19,12 +19,49 @@
 ### Limitations of Data
 - EV Vehicle Sales Data is grouped geographically by Province
 - EV Vehicle Sales Data dates back to 2011
+    - sum total sales to have estimate of EV on road today
+- Labour Force Statistics (Features Dataset) is grouped geographically by province
+- Some provinces do not provide EV sales data to StatsCan, may need to drop these provinces from analysis
 
 ### Definitions of terms
 **Community**
 *postal code;dissemination area; census area*
 
 ## Communication Protocols
+- Slack message updates as items change
+- 2 1-hour meetings per week to review project progress
+    - Tuesday and Thursday evening video call 7pm
+    
+
+
+## Next steps:
+- Find Datasets that will provide sufficient specificity of vehicle sales
+- Begin cleaning data for relevant information
+    - Charging stations: 
+        - status of station > groupby
+        - Organize by locations
+        - filter for EV chargers
+    - LFS Dataset:
+        - Find relevant columns, drop unneccesary
+        - relable columns for interpretability
+        - Scale data?
+        - Elysee : *If data available by city or detailed location to increase specificity* **Access to this data may impact our target question and viability of model**
+    - vehicle sales:
+        - find relevant columns, drop unneccesary
+        - groupy EV types to one type, drop gasoline and diesel vehicles
+        - groupby province
+        - sum total sales by year to grand total
+        - Jordan: *If data available by city or detailed location to increase specificity* **Access to this data may impact our target question and viability of model**
+
+- Determine if datasets are dynamic or static
+    - likely static
+    - load the datasets to database
+- mockup of machine learning model with output labels
+    - linear regression model
+    - features and scaling
+    - output = # of charging stations in [area]
+- set up basic database schema (ERD)
+- connect machine learning model to database for output
 
 
 ## First Segment
