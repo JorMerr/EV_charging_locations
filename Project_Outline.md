@@ -22,5 +22,42 @@
 **Community**
 *postal code;dissemination area; census area*
 
+## Communication Protocols
 
-- this week: have dataset for features
+
+## First Segment
+### Presentation
+
+- [ ] Content
+    - [ ] Selected Topic
+    - [ ] Reason they selected the topic
+    - [ ] Description of the source of data
+    - [ ] Questions they hope to answer with the data
+
+### GitHub Repository
+- [ ] Main Branch
+    - [ ] include README
+
+- [ ] README.md
+    - [ ] Description of the communication protocols
+
+- [ ] Individual Branches
+    - [ ] At least one branch for each team member
+    - [ ] Each team member has at least four commits for the duration of the first segment
+
+### Machine Learning Model
+- [ ] Takes in Data from the provisional database
+- [ ] Outputs label for input data
+
+### Database Integration
+- [ ] Sample data that mimics the expected final database structure or schema
+- [ ] Draft machine learning model is connected to the provisional database
+
+## Second Segment
+
+
+
+## Third Segment
+
+
+## Fourth Segment
