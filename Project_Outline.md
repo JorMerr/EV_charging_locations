@@ -8,17 +8,17 @@
 
 - **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/n1/pub/71m0001x/71m0001x2021001-eng.htm)**
 
-- **[NEW MOTOR VEHICLE REGISTRATIONS- ANNUAL](https://doi.org/10.25318/2010002101-eng)**
+- **[NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)**
 
 ### Data Features
 - Population
 - Median Income
 - Highest Education Level Acheived
-- Electric Vehicle Sales Since 2011
+- Electric Vehicle Sales Since 2017
 
 ### Limitations of Data
 - EV Vehicle Sales Data is grouped geographically by Province
-- EV Vehicle Sales Data dates back to 2011
+- EV Vehicle Sales Data dates back to 2017
     - sum total sales to have estimate of EV on road today
 - Labour Force Statistics (Features Dataset) is grouped geographically by province
 - Some provinces do not provide EV sales data to StatsCan, may need to drop these provinces from analysis
