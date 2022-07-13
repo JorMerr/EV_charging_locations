@@ -80,7 +80,7 @@
 - [ ] Description of the communication protocols
 
 #### Individual Branches
-- [ ] At least one branch for each team member
+- [x] At least one branch for each team member
 - [ ] Each team member has at least four commits for the duration of the first segment
 
 ### Machine Learning Model
