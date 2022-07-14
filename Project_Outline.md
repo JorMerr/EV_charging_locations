@@ -64,9 +64,24 @@
 - connect machine learning model to database for output
 
 
+### Visualizations
+- city data to display as map of Canada with individual points
+    - some visual way of identifying existing locations vs predicted by model
+- city data to display number of stations as size of point
+- bar chart to show total stations predicted in each city (or top 10)
+- line graph to show EV registrations over time
+- pie chart percentage change of EV registrations since 2011 (use annual vehicle registrations dataset, Tableau)
+- comparison of median income to EV registrations or charging stations
+- comparison of median education level to EV registrations or charging stations
+- 
+
+
+### 
+
+
 ## First Segment
 ### Presentation
-#### Content
+#### Content - J first draft, E edit/proof
 - [ ] Selected Topic
 - [ ] Reason they selected the topic
 - [ ] Description of the source of data
@@ -74,7 +89,7 @@
 
 ### GitHub Repository
 #### Main Branch
-- [ ] include README
+- [x] include README
 
 #### README.md
 - [ ] Description of the communication protocols
@@ -83,13 +98,24 @@
 - [x] At least one branch for each team member
 - [ ] Each team member has at least four commits for the duration of the first segment
 
-### Machine Learning Model
+### Machine Learning Model - 
 - [ ] Takes in Data from the provisional database
 - [ ] Outputs label for input data
 
-### Database Integration
+### Database Integration - E
 - [ ] Sample data that mimics the expected final database structure or schema
 - [ ] Draft machine learning model is connected to the provisional database
+
+### Tasks
+- [ ] Merge J-code to main
+- [ ] Merge E-code to main
+- [ ] clean census data - E
+- [ ] clean statcan EV registrations - J
+- [ ] clean statcan LFS table - E
+- [ ] filter charging station json data - J
+- [ ] Load data to S3 bucket - Both
+- [ ] import to pgAdmin for joining and extra cleaning - E
+- [ ] export sample table with 1000 rows to test ML Models - E
 
 ## Second Segment
 ### Presentation
