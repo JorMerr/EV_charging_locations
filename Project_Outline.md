@@ -3,9 +3,18 @@
 ## Project Goal
     Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
 
+ elzco
+ HEAD
     ### What we hope to achieve:
         - Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
 
+
+ main
+
+    ### What we hope to achieve:
+        - Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
+
+main
 ## Sources of Data
 - **[NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)**
 
@@ -28,8 +37,17 @@
 
 ### Definitions of terms
 **Community**
+ elzco
+ HEAD
 
 *city*
+
+*postal code;dissemination area; census area*
+main
+
+
+*city*
+ main
 
 ## Communication Protocols
 - Slack message updates as items change
@@ -61,7 +79,14 @@
     - likely static
     - load the datasets to database
 - mockup of machine learning model with output labels
+ elzco
+HEAD
     - snapshot of dataset to test machine learning model
+
+ main
+
+    - snapshot of dataset to test machine learning model
+ main
     - linear regression model
     - features and scaling
     - output = # of charging stations in [area]
