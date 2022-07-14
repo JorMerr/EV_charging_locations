@@ -13,6 +13,7 @@
 - **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/n1/pub/71m0001x/71m0001x2021001-eng.htm)**
 
 - **[NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)**
+    @NOTE from StatsCan *To ensure the confidentiality of the Zero-Emission Vehicles (ZEV) data, a process known as Random Tabular Adjustment (RTA) was used. This changes estimates by a random amount and adds a degree of uncertainty to the accuracy of the estimate to prevent the disclosure of individual values. As a result, estimates that could disclose an individual's response are not released. (Note that if the adjusted estimates are part of a table with totals or sub-totals, the related total and sub-total estimates will also be adjusted.)*
 
 ### Data Features
 - Population
