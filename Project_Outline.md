@@ -3,6 +3,7 @@
 ## Project Goal
     Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
 
+
     ### What we hope to achieve:
         - Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
 
@@ -30,6 +31,7 @@
 **Community**
 
 *city*
+
 
 ## Communication Protocols
 - Slack message updates as items change
