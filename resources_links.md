@@ -30,6 +30,14 @@ Income of individuals by age group, sex and income source, Canada, provinces and
 - name of db : ev-charging-locations-db
 - [database_endpoint] :  ev-charging-locations-db.ckmzzavm8bgu.us-east-1.rds.amazonaws.com
 
+## additional tables 
+
+# Population data
+
+Population and dwelling counts: Canada, provinces and territories
+
+link : https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=9810000101
+
 
 
  
