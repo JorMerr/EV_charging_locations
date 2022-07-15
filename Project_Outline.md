@@ -10,7 +10,7 @@
 ## Sources of Data
 - **[NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)**
 
-- **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/n1/pub/71m0001x/71m0001x2021001-eng.htm)**
+- **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410039101)**
 
 - **[NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)**
     @NOTE from StatsCan *To ensure the confidentiality of the Zero-Emission Vehicles (ZEV) data, a process known as Random Tabular Adjustment (RTA) was used. This changes estimates by a random amount and adds a degree of uncertainty to the accuracy of the estimate to prevent the disclosure of individual values. As a result, estimates that could disclose an individual's response are not released. (Note that if the adjusted estimates are part of a table with totals or sub-totals, the related total and sub-total estimates will also be adjusted.)*
@@ -90,17 +90,17 @@
 ## First Segment
 ### Presentation
 #### Content - J first draft, E edit/proof
-- [ ] Selected Topic
-- [ ] Reason they selected the topic
-- [ ] Description of the source of data
-- [ ] Questions they hope to answer with the data
+- [x] Selected Topic
+- [x] Reason they selected the topic
+- [x] Description of the source of data
+- [x] Questions they hope to answer with the data
 
 ### GitHub Repository
 #### Main Branch
 - [x] include README
 
 #### README.md
-- [ ] Description of the communication protocols
+- [x] Description of the communication protocols
 
 #### Individual Branches
 - [x] At least one branch for each team member
