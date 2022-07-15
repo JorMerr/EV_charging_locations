@@ -28,6 +28,7 @@ Our data has been collected from the following sources using the listed methods 
 We hope to answer whether Canadian cities will be sufficiently ready to support the adoption of Zero Emission Vehicles as the transition away from fossil fuel burning vehicles continues. We aim to predict the number of electric vehicle charging stations each city can support based on key demographic information.
 
 ## Communication Protocols
+This is a brief outline of the communication protocols for this project. It outlines the frequency, purpose, and method of communication established by the team to ensure consistent communication between the project partners.
 ### Project Team Meetings
 - Tuesdays and Thursdays at 7pm
 - Video call meeting
