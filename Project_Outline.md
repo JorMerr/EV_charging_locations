@@ -104,7 +104,7 @@
 
 #### Individual Branches
 - [x] At least one branch for each team member
-- [ ] Each team member has at least four commits for the duration of the first segment
+- [x] Each team member has at least four commits for the duration of the first segment
 
 ### Machine Learning Model - 
 - [ ] Takes in Data from the provisional database
@@ -118,9 +118,9 @@
 - [ ] Merge J-code to main
 - [ ] Merge E-code to main
 - [ ] clean census data - E
-- [ ] clean statcan EV registrations - J
+- [x] clean statcan EV registrations - J
 - [ ] clean statcan LFS table - E
-- [ ] filter charging station json data - J
+- [x] filter charging station json data - J
 - [ ] Load data to S3 bucket - Both
 - [ ] import to pgAdmin for joining and extra cleaning - E
 - [ ] export sample table with 1000 rows to test ML Models - E
