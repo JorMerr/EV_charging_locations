@@ -10,9 +10,10 @@
 ## Sources of Data
 - **[NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)**
 
-- **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/n1/pub/71m0001x/71m0001x2021001-eng.htm)**
+- **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410039101)**
 
 - **[NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)**
+    @NOTE from StatsCan *To ensure the confidentiality of the Zero-Emission Vehicles (ZEV) data, a process known as Random Tabular Adjustment (RTA) was used. This changes estimates by a random amount and adds a degree of uncertainty to the accuracy of the estimate to prevent the disclosure of individual values. As a result, estimates that could disclose an individual's response are not released. (Note that if the adjusted estimates are part of a table with totals or sub-totals, the related total and sub-total estimates will also be adjusted.)*
 
 ### Data Features
 - Population
@@ -89,21 +90,21 @@
 ## First Segment
 ### Presentation
 #### Content - J first draft, E edit/proof
-- [ ] Selected Topic
-- [ ] Reason they selected the topic
-- [ ] Description of the source of data
-- [ ] Questions they hope to answer with the data
+- [x] Selected Topic
+- [x] Reason they selected the topic
+- [x] Description of the source of data
+- [x] Questions they hope to answer with the data
 
 ### GitHub Repository
 #### Main Branch
 - [x] include README
 
 #### README.md
-- [ ] Description of the communication protocols
+- [x] Description of the communication protocols
 
 #### Individual Branches
 - [x] At least one branch for each team member
-- [ ] Each team member has at least four commits for the duration of the first segment
+- [x] Each team member has at least four commits for the duration of the first segment
 
 ### Machine Learning Model - 
 - [ ] Takes in Data from the provisional database
@@ -117,12 +118,15 @@
 - [ ] Merge J-code to main
 - [ ] Merge E-code to main
 - [ ] clean census data - E
-- [ ] clean statcan EV registrations - J
+- [x] clean statcan EV registrations - J
 - [ ] clean statcan LFS table - E
-- [ ] filter charging station json data - J
+- [x] filter charging station json data - J
 - [ ] Load data to S3 bucket - Both
 - [ ] import to pgAdmin for joining and extra cleaning - E
 - [ ] export sample table with 1000 rows to test ML Models - E
+- [ ] Check if datasets can be saved directly to S3 bucket and allow dynamic updating of database
+- [ ] Tableau dashboard
+    - [ ] If time, add website app
 
 ## Second Segment
 ### Presentation
@@ -150,6 +154,7 @@
 - [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
 - [ ] Description of how data was split into training and testing sets
 - [ ] Explanation of model choice, including limitations and benefits
+    - [ ] Ideal accuracy 95%
 
 ### Database integration
 - [ ] Database stores static data for use during the project
@@ -163,6 +168,7 @@
 - [ ] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
 - [ ] Description of interactive element(s)
+    - [ ] Tableau vs Interactive Website Dashboard
 
 
 ## Third Segment
