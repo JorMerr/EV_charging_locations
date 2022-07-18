@@ -124,6 +124,9 @@
 - [ ] Load data to S3 bucket - Both
 - [ ] import to pgAdmin for joining and extra cleaning - E
 - [ ] export sample table with 1000 rows to test ML Models - E
+- [ ] Check if datasets can be saved directly to S3 bucket and allow dynamic updating of database
+- [ ] Tableau dashboard
+    - [ ] If time, add website app
 
 ## Second Segment
 ### Presentation
@@ -151,6 +154,7 @@
 - [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
 - [ ] Description of how data was split into training and testing sets
 - [ ] Explanation of model choice, including limitations and benefits
+    - [ ] Ideal accuracy 95%
 
 ### Database integration
 - [ ] Database stores static data for use during the project
@@ -164,6 +168,7 @@
 - [ ] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
 - [ ] Description of interactive element(s)
+    - [ ] Tableau vs Interactive Website Dashboard
 
 
 ## Third Segment
