@@ -113,6 +113,7 @@
 ### Database Integration - E
 - [ ] Sample data that mimics the expected final database structure or schema
 - [ ] Draft machine learning model is connected to the provisional database
+    - [x] Machine learning model template is created
 
 ### Tasks
 - [ ] Merge J-code to main
