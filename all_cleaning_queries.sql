@@ -253,11 +253,10 @@ SELECT COUNT(*) FROM population_table
 
 -- renaming columns 
 sp_RENAME 'population_table.Population_and_dwelling_counts_11' , 'Population', 'COLUMN';
-
+sp_RENAME 'population_table.UID' , 'Province_ID', 'COLUMN';
 -- KEPP ONLY population column 
 
 DELETE  FROM population_table
-
 WHERE Population NOT LIKE 'Population, 2021'
 
 -- drop un-necessary columns(UOM,SYMBOL,TERMINATED,DECIMALS,STATS)
@@ -310,10 +309,35 @@ WHERE Province = 'Nunavut';
 SELECT * FROM population_table
 
 -- Joins 
-SELECT i.UID,i.REF_DATE,i.Age_group,p.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
+
+
+SELECT i.UID,p.Province_ID,i.REF_DATE,i.Age_group,i.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
 FROM income_table as i
 FULL OUTER JOIN population_table as p
-ON i.UID = p.UID
+ON i.UID = p.Province_ID
+
+-- creating the new table from joins 
+
+SELECT i.UID,p.Province_ID,i.REF_DATE,i.Age_group,i.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
+INTO 
+	final_table
+FROM income_table as i
+FULL OUTER JOIN population_table as p
+ON i.UID = p.Province_ID
+
+
+-- checking the nw table 
+SELECT * FROM final_table
+WHERE UID LIKE 'S0504450'
+
+-- creating city-ID and Province ID 
+
+
+
+
+
+
+
 
 
 
@@ -331,7 +355,10 @@ ON i.UID = p.UID
 
 -- get population from 2016 to 2020, join the population and income according to year and city
 
--- for census data cleaning 
+-- for census data cleaning, High chance to drop this table 
+
+
+
 -- use GCP bigquery and connect to S3
 -- clean the data from GCP 
 SELECT COUNT(*) FROM census_table
