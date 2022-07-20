@@ -314,7 +314,9 @@ ON i.UID = p.Province_ID
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
+DROP TABLE IF EXISTS final_table
 
+SELECT * FROM final_table
 
 SELECT i.UID,p.Province_ID,i.REF_DATE,i.Age_group,i.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
 INTO 
@@ -341,6 +343,17 @@ UPDATE  final_table
 SET REF_DATE = 2021
 WHERE REF_DATE IS NULL
 
+UPDATE  final_table
+SET Province = 'Northwest Territories'
+WHERE UID = 'A000261'
+
+UPDATE  final_table
+SET Province = 'Nunavut'
+WHERE UID = 'A000262'
+
+UPDATE  final_table
+SET Province = 'Yukon'
+WHERE UID = 'A000260'
 
 SELECT * FROM final_table
 WHERE REF_DATE = 2016 AND Province LIKE 'Newfoundland and Labrador'
@@ -484,8 +497,16 @@ WHERE GEO_NAME  LIKE 'Newfoundland and Labrador'
 
 
 
-SELECT * FROM EV_registrations_cities_table
-WHERE GEO LIKE '%Québec, Quebec%'
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+					-- cleaning  EV_stations_locations
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
 
 ---- cleaning EV_stations_locations
 
@@ -494,3 +515,36 @@ WHERE GEO LIKE '%Québec, Quebec%'
 -- drop unnecessary columns
 SELECT Count(City), City FROM EV_stations_locations
 GROUP BY City
+
+
+
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+					-- cleaning  EV_registrations_cities_table
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+SELECT * FROM EV_registrations_cities_table
+WHERE GEO LIKE '%Québec, Quebec%'
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+					-- cleaning  EV_registrations_provinces_table
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+-- STEPS 
+-- Drop un necessary columns 
+-- change Ref_date to Year only 
+-- rename GEO column to Province
+-- Join to final on Province
+
+
+
+SELECT * FROM EV_registrations_provinces_table
