@@ -1,16 +1,18 @@
 --- CLEANING THE DATA
+
+
 ------------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
--- CLEANING CANADA INCOME DATASET
+			-- CLEANING CANADA INCOME DATASET
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS Income_table
 
 -- show all columns 
 SELECT * FROM income_table;
-
-
-
 SELECT COUNT(*) FROM income_table
 
 
@@ -60,6 +62,7 @@ FROM income_table
 WHERE Median_Income  NOT LIKE 'Median income (excluding zeros)'
 
 -- drop scalar_id column 
+
 ALTER TABLE income_table
 DROP COLUMN SCALAR_ID
 
@@ -67,11 +70,13 @@ ALTER TABLE income_table
 DROP COLUMN SCALAR_FACTOR
 
 -- DROP NULL VALUES FROM TOTAL INCOME
+
 DELETE
 FROM income_table
 WHERE Total_Income  IS NULL
 
 -- dropping Median_Income
+
 ALTER TABLE income_table
 DROP COLUMN Median_Income
 
@@ -216,32 +221,13 @@ SET UID = RIGHT(DGUID,LEN(DGUID)-4)
 ALTER TABLE Income_table
 DROP COLUMN  DGUID
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
--- cleaning the population dataset 
+				-- cleaning the population dataset 
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS Income_table
 
@@ -274,6 +260,7 @@ ALTER TABLE population_table
 DROP COLUMN  Population;
 
 -- DELETE ALL Geographic locations where GEO COLUMN = TO CANADA
+
 DELETE  FROM population_table
 WHERE GEO = 'Canada';
 
@@ -284,12 +271,14 @@ sp_RENAME 'population_table.TOTAL' , 'POPULATION', 'COLUMN';
 sp_RENAME 'population_table.GEO' , 'Province', 'COLUMN';
 
 -- trim DGUID to keep the last 6 digits
+
 SELECT DGUID, 
 LEFT(DGUID,4) as tobe_dropped,
 RIGHT(DGUID,LEN(DGUID)-4) AS to_keep
 FROM population_table;
 
 -- Extracting UID  from TABLE
+
 ALTER TABLE population_table 
 ADD UID NVARCHAR(255)
 
@@ -316,7 +305,16 @@ FROM income_table as i
 FULL OUTER JOIN population_table as p
 ON i.UID = p.Province_ID
 
--- creating the new table from joins 
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+					--**JOINS** 
+
+					-- creating the new table(final_table) from joins
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
 
 SELECT i.UID,p.Province_ID,i.REF_DATE,i.Age_group,i.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
 INTO 
@@ -326,22 +324,104 @@ FULL OUTER JOIN population_table as p
 ON i.UID = p.Province_ID
 
 
--- checking the nw table 
-SELECT * FROM final_table
-WHERE UID LIKE 'S0504450'
+-- checking the new table 
+---- this information is only for the Province
+---- need to find out how to clean it 
 
 -- creating city-ID and Province ID 
 
+SELECT * FROM final_table f
+WHERE f.Province IS NULL
+
+UPDATE  final_table
+SET UID = Province_ID 
+WHERE UID IS NULL
+
+UPDATE  final_table
+SET REF_DATE = 2021
+WHERE REF_DATE IS NULL
 
 
+SELECT * FROM final_table
+WHERE REF_DATE = 2016 AND Province LIKE 'Newfoundland and Labrador'
+SELECT DISTINCT  Income_source 
+FROM final_table
+WHERE UID LIKE 'A%'
+
+-- keeping one UID, 
+-- City IDs starts with S, Province ID starts with A
+ALTER TABLE final_table
+DROP COLUMN  Province_ID
+
+SELECT * FROM final_table
+WHERE City LIKE '%Toronto%'
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+					-- cleaning  Labour Force table 
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+SELECT * FROM lfs_table
+
+WHERE REF_DATE < 2016
+
+-- REMOVING EVERYTHING BEFORE 2016
+DELETE 
+FROM lfs_table
+WHERE REF_DATE < 2016
 
 
+-- DROPPING UNNCESSARY COLUMNS
+ALTER TABLE lfs_table
+DROP COLUMN  UOM_ID,SCALAR_ID,VECTOR,COORDINATE,STATUS,SYMBOL,TERMINATED,DECIMALS
+
+-- separating the provinces and cities 
+SELECT GEO,DGUID, 
+LEFT(DGUID,4) as tobe_dropped,
+RIGHT(DGUID,LEN(DGUID)-4) AS to_keep
+FROM lfs_table;
+
+-- create a new column to hold City_ID
+ALTER TABLE lfs_table
+ADD City_ID NVARCHAR(255)
 
 
+UPDATE lfs_table
+SET City_ID = RIGHT(DGUID,LEN(DGUID)-4)
 
 
+-- City and Province columns
+SELECT *,
+LEFT(GEO,CHARINDEX(',',GEO) -1) AS City
+,RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO)) AS Province
+FROM lfs_table;
 
 
+-- create a new column to hold City and Province
+ALTER TABLE lfs_table
+ADD City NVARCHAR(255),
+Province NVARCHAR(255)
+
+
+UPDATE lfs_table
+SET City = LEFT(GEO,CHARINDEX(',',GEO) -1),
+Province=RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO))
+
+-- drop un necessary column 
+ALTER TABLE lfs_table
+DROP COLUMN GEO, DGUID
+
+-- drop un necessary column 
+ALTER TABLE lfs_table
+DROP COLUMN column1
+
+
+-- checking big cities in canada
+SELECT * FROM lfs_table 
+WHERE City Like '%St-Petronille%'
 
 
 
@@ -370,6 +450,7 @@ WHERE GEO_NAME = 'Nunavut';
 -- income 
 -- population 
 -- education level (how many educated people in an area X, degree, diploma, how many graduated), get categorized level by education level
+-- highest achieved education in the province or education rate by city
 
 
 
@@ -393,3 +474,23 @@ WHERE CHARACTERISTIC_NAME  LIKE '%Median total income of household in 2020 ($)%'
 SELECT DISTINCT * 
 FROM census_table
 WHERE GEO_NAME  LIKE 'Newfoundland and Labrador'
+
+
+---- cleaning EV_registrations_cities_table
+-- Table goes back t0 2017
+-- drop REF_DATE
+-- group by year and keep the total 
+-- rename VALUE column to total ev cars
+
+
+
+SELECT * FROM EV_registrations_cities_table
+WHERE GEO LIKE '%Québec, Quebec%'
+
+---- cleaning EV_stations_locations
+
+-- count the number of stations by city 
+-- create a new column to hold the count 
+-- drop unnecessary columns
+SELECT Count(City), City FROM EV_stations_locations
+GROUP BY City
