@@ -45,5 +45,9 @@ https://www.canadadrives.ca/blog/news/government-fuels-electric-vehicle-demand-w
 ## city and population data 
 https://simplemaps.com/data/canada-cities
 
+## education data 
+for all city and province
+https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/edu-sco/Table.cfm?Lang=E&T=11&Geo=00&SP=1&view=2&age=1&sex=1
+
 
  
