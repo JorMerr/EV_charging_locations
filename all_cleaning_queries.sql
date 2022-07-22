@@ -1,4 +1,5 @@
-﻿--- CLEANING THE DATA---------
+
+ï»¿--- CLEANING THE DATA---------
 
 SELECT * FROM lfs_table;
 --SELECT * FROM income_table;
@@ -12,13 +13,254 @@ SELECT * FROM provincial_income
 SELECT * FROM final_table
 SELECT * FROM merged_dataset_table
 
+--- CLEANING THE DATA
+
+
+------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+			-- CLEANING CANADA INCOME DATASET
+
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS Income_table
+
+-- show all columns 
+SELECT * FROM income_table;
+SELECT COUNT(*) FROM income_table
+
+
+-- drop un-necessary columns(UOM,SYMBOL,TERMINATED,DECIMALS,STATS)
+
+ALTER TABLE income_table
+DROP COLUMN UOM, UOM_ID,
+VECTOR, COORDINATE, STATUS, SYMBOL, TERMINATED, DECIMALS;
+
+-- DELETE ALL Geographic locations where GEO COLUMN = TO CANADA
+
+DELETE  FROM income_table
+WHERE GEO = 'Canada';
+
+-- checking the columns with all provinces 
+-- dataset does not include provinces like Yukon,Northwest Territories,Nunavut
+-- show all columns 
+SELECT * FROM income_table
+WHERE GEO = 'Atlantic provinces';
+
+-- DELETE ALL Geographic locations where GEO COLUMN = TO Atlantic provinces
+DELETE  FROM Income_table
+WHERE GEO = 'Atlantic provinces';
+
+-- DELETE ALL Geographic locations where GEO COLUMN = TO Prairie provinces
+DELETE  FROM Income_table
+WHERE GEO = 'Prairie provinces';
+
+-- renaming VALUE columns to Total 
+
+sp_RENAME 'income_table.VALUE' , 'TOTAL', 'COLUMN';
+
+sp_RENAME 'income_table.TOTAL' , 'Total_Income', 'COLUMN';
+
+
+-- renaming the statistics column to Median Income
+sp_RENAME 'income_table.Statistics' , 'Median_Income', 'COLUMN';
+
+-- selecting only Median income 
+
+SELECT DISTINCT * 
+FROM income_table
+WHERE Median_Income  NOT LIKE 'Median income (excluding zeros)'
+ORDER BY Total_Income desc
+
+-- delete the rest of information other than median income 
+DELETE
+FROM income_table
+WHERE Median_Income  NOT LIKE 'Median income (excluding zeros)'
+
+-- drop scalar_id column 
+
+ALTER TABLE income_table
+DROP COLUMN SCALAR_ID
+
+ALTER TABLE income_table
+DROP COLUMN SCALAR_FACTOR
+
+-- DROP NULL VALUES FROM TOTAL INCOME
+
+DELETE
+FROM income_table
+WHERE Total_Income  IS NULL
+
+-- dropping Median_Income
+
+ALTER TABLE income_table
+DROP COLUMN Median_Income
+
+-- separating city and provinces
+-- update table with the new columns 
+-- replace empty space with city names
+
+
+SELECT *  FROM income_table;
+
+-- CHANGE GEO COLUMNS 
+-- renaming GEO columns field 
+
+-- REPLACING Québec, Quebec TO Québec City, Quebec
+SELECT *  FROM income_table
+WHERE Province  LIKE '%Alberta%';
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Québec, Quebec','Québec City, Quebec')
+
+-- REPLACING Ottawa-Gatineau, Ontario/Quebec TO Ottawa, Ontario
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Ottawa-Gatineau, Ontario/Quebec','Ottawa-Gatineau, Ontario')
+
+-- changing the names of all GEO locations 
+-- REPLACING Newfoundland and Labrador TO Newfoundland and Labrador,Newfoundland and Labrador
+-- Prince Edward Island to Prince Edward Island,Prince Edward Island
+-- Nova Scotia to Nova Scotia,Nova Scotia
+-- New Brunswick to New Brunswick,New Brunswick
+-- Quebec to Quebec,Quebec
+-- Ontario to Ontario,Ontario
+-- Manitoba to Manitoba,Manitoba
+-- Saskatchewan to Saskatchewan,Saskatchewan
+-- Alberta to Alberta,Alberta
+-- British Columbia to British Columbia
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Newfoundland and Labrador','Newfoundland and Labrador,Newfoundland and Labrador')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Prince Edward Island','Prince Edward Island,Prince Edward Island')
+
+UPDATE income_table
+SET GEO =  REPLACE(GEO,'Nova Scotia','Nova Scotia, Nova Scotia')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Quebec','Quebec, Quebec')
+ 
+ UPDATE income_table
+SET GEO = REPLACE(GEO,'Ontario','Ontario, Ontario')
+
+ UPDATE income_table
+SET GEO = REPLACE(GEO,'Manitoba','Manitoba,Manitoba')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Saskatchewan','Saskatchewan,Saskatchewan')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'Alberta','Alberta,Alberta')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'British Columbia','British Columbia,British Columbia')
+
+UPDATE income_table
+SET GEO = REPLACE(GEO,'New Brunswick','New Brunswick,New Brunswick');
+
+
+
+SELECT *
+,RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO)) AS Province
+FROM income_table;
+
+-- ,LEFT(GEO,CHARINDEX(',',GEO)) AS City
+
+ALTER TABLE Income_table 
+ADD Province NVARCHAR(255)
+
+UPDATE Income_table 
+-- SET City = LEFT(GEO,CHARINDEX(',',GEO)),
+SET Province = RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO))
+
+SELECT DISTINCT Province FROM income_table;
+
+-- changing the province column 
+SELECT *
+,RIGHT(Province,LEN(Province) - CHARINDEX(',',Province)) AS Province2
+FROM income_table;
+
+-- Creating Province2 column
+ALTER TABLE Income_table 
+ADD Province2 NVARCHAR(255)
+
+UPDATE Income_table 
+
+SET Province2 = RIGHT(Province,LEN(Province) - CHARINDEX(',',Province))
+
+
+UPDATE Income_table 
+
+SET Province = Province2
+
+-- drop provinces columns 
+
+ALTER TABLE income_table
+DROP COLUMN Province2
+
+-- show all columns 
+SELECT * FROM income_table;
+
+SELECT DISTINCT * 
+FROM income_table
+
+-- Extracting Cities  from GEO 
+ALTER TABLE Income_table 
+ADD City NVARCHAR(255)
+
+SELECT *,
+LEFT(GEO,CHARINDEX(',',GEO) -1) AS City
+FROM income_table;
+
+UPDATE Income_table 
+SET City = LEFT(GEO,CHARINDEX(',',GEO) -1) 
+
+-- drop GEO column
+ALTER TABLE income_table
+DROP COLUMN GEO
+
+-- trim DGUID to keep the last 6 digits
+SELECT Province,DGUID, 
+LEFT(DGUID,4) as tobe_dropped,
+RIGHT(DGUID,LEN(DGUID)-4) AS to_keep
+FROM income_table;
+
+-- Extracting UID  from TABLE
+ALTER TABLE Income_table 
+ADD UID NVARCHAR(255)
+
+
+UPDATE Income_table 
+SET UID = RIGHT(DGUID,LEN(DGUID)-4)
+
+-- Drop DGUID COLUMN 
+ALTER TABLE Income_table
+DROP COLUMN  DGUID
+
+-- checking the cleaned dataset
+SELECT * 
+FROM Income_table
+
+
+-----------------------------End of Cleaning Income_Data set------------
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
 
 				-- cleaning the province_population_table dataset 
 
+
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
+
 
 DROP TABLE IF EXISTS province_population_table
 
@@ -48,24 +290,30 @@ ALTER TABLE province_population_table
 DROP COLUMN  SCALAR_ID;
 
 ALTER TABLE province_population_table
+
 DROP COLUMN  Population;
 
 -- DELETE ALL Geographic locations where GEO COLUMN = TO CANADA
 
+
 DELETE  FROM province_population_table
+
 WHERE GEO = 'Canada';
 
 -- renaming VALUE columns to Total 
 
+
 sp_RENAME 'province_population_table.VALUE' , 'TOTAL', 'COLUMN';
 sp_RENAME 'province_population_table.TOTAL' , 'POPULATION', 'COLUMN';
 sp_RENAME 'province_population_table.GEO' , 'Province', 'COLUMN';
+
 
 -- trim DGUID to keep the last 6 digits
 
 SELECT DGUID, 
 LEFT(DGUID,4) as tobe_dropped,
 RIGHT(DGUID,LEN(DGUID)-4) AS to_keep
+
 FROM province_population_table;
 
 -- Extracting UID  from TABLE
@@ -79,18 +327,19 @@ SET UID = RIGHT(DGUID,LEN(DGUID)-4)
 
 -- Drop DGUID COLUMN 
 ALTER TABLE province_population_table
+
 DROP COLUMN  DGUID
 
 
 
 
 SELECT * 
+
 FROM province_population_table
 
 
 ------------------------------------END OF CLEANING POPULATION TABLE --------------
 -----------------------------------------------------------------------------------
-
 
 
 
@@ -182,9 +431,11 @@ DELETE
 FROM lfs_table 
 WHERE Labour_force_characteristics Like '%Labour force%'
 
+
 -- trim province 
 UPDATE lfs_table
 SET Province = TRIM(Province)
+
 
 UPDATE lfs_table
 SET VALUE = VALUE*100
@@ -219,21 +470,21 @@ SELECT *
 FROM lfs_table
 WHERE City_ID like '%Toronto%'
 
+
 -----------------------------------------------------------------------------
 
 ----- END OF CLEANING LABOUR FORCE-------------------------------------------
 
 -----------------------------------------------------------------------------
 
-
-
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 					-- cleaning  EV_stations_locations
 
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
 
 -- count the number of stations by city 
 -- create a new column to hold the count 
@@ -300,15 +551,16 @@ UPDATE  EV_stations_locations
 SET Status_Code =  'Available'
 WHERE Status_Code like 'T'
 
+
 -- changing Quebec city name 
 
 UPDATE  EV_stations_locations
 SET City =  'Quebec City'
-WHERE City like 'Ville de Québec'
+WHERE City like 'Ville de QuÃ©bec'
 
 UPDATE  EV_stations_locations
 SET City =  'Saint-Jerome'
-WHERE City like 'St-Jérôme'
+WHERE City like 'St-JÃ©rÃ´me'
 
 UPDATE  EV_stations_locations
 SET City =  'Montreal'
@@ -321,8 +573,9 @@ WHERE Stations_ID = 150515
 -- cleaning the rest of double names from QC
 
 UPDATE  EV_stations_locations
-SET City =  'Saint‐Bruno'
-WHERE City like 'St‐Bruno'
+SET City =  'SaintâBruno'
+WHERE City like 'StâBruno'
+
 
 
 -- setting the city_ID will be done when i Join tables
@@ -338,11 +591,12 @@ GROUP BY City
 --ALTER TABLE EV_stations_locations
 --ADD Total_stations_Per_City INT
 
+
 -- number of ev stations  in each city
 
 SELECT * FROM EV_stations_locations
 
-WHERE CITY LIKE 'Rivière%'
+WHERE CITY LIKE 'RiviÃ¨re%'
 
 -- CREATE A COLUMN TO HOLD TOTAL STATIONS 
 
@@ -365,10 +619,11 @@ GROUP BY City
 
 
 SELECT * FROM EV_stations_locations 
-WHERE City LIKE '%Rivière%'
+WHERE City LIKE '%RiviÃ¨re%'
 
 
 ---------------------------END OF CLEANING EV_Station_locations_Table-------------
+
 
 
 
@@ -386,6 +641,7 @@ WHERE City LIKE '%Rivière%'
 -- drop REF_DATE
 -- group by year and keep the total 
 -- rename VALUE column to total ev cars
+
 -- drop the Geo_ID starts with As and keep the city(starts by S)
 
 -- number of ev cars in this particular city
@@ -431,7 +687,9 @@ GROUP BY GEO
 
 
 
+
 DROP TABLE IF EXISTS EV_registrations_cities_table
+
 
 SELECT  
  GEO, Count(VALUE) as Total_stations
@@ -448,6 +706,7 @@ SELECT * FROM EV_registrations_cities_table
 
 
 
+
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
@@ -455,13 +714,9 @@ SELECT * FROM EV_registrations_cities_table
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
+
 -- STEPS
 -- this table is bout total ev cars by province 
--- Drop un necessary columns 
--- change Ref_date to Year only 
--- rename GEO column to Province
--- Join to final on Province
-
 
 -- Renaming columns 
 
@@ -497,7 +752,7 @@ DROP COLUMN  REF_DATE
 
 sp_RENAME 'EV_registrations_provinces_table.REF_DATE2' , 'REF_DATE', 'COLUMN';
 
-SELECT  *
+
 FROM EV_registrations_provinces_table
 GROUP BY Province
 
@@ -590,7 +845,7 @@ WHERE  City_Electricity_Rate IS   NULL
 
 
 SELECT * FROM final_table
-WHERE city LIKE 'St-Jérôme%'
+WHERE city LIKE 'St-JÃ©rÃ´me%'
 
 
 SELECT * 
@@ -666,8 +921,8 @@ WHERE	f.City = s.City
 
 -- updating french names 
 UPDATE  final_table
-SET City =  'Rivière-du-Loup'
-WHERE City like 'Rivière du Loup'
+SET City =  'RiviÃ¨re-du-Loup'
+WHERE City like 'RiviÃ¨re du Loup'
 
 
 -- adding unemployement rate to our table 
@@ -713,14 +968,14 @@ WHERE	f.City = e.City
 UPDATE final_table
 SET final_table.City_Electricity_Rate = 7.3
 FROM final_table f
-WHERE	f.City_Electricity_Rate = '7.3¢'
+WHERE	f.City_Electricity_Rate = '7.3Â¢'
 
 --- UPDATE electricity rate
 
 UPDATE final_table
 SET final_table.City_Electricity_Rate = 9.9
 FROM final_table f
-WHERE	f.City_Electricity_Rate = '9.9¢'
+WHERE	f.City_Electricity_Rate = '9.9Â¢'
 
 -- rename population as city_population
 sp_RENAME 'final_table.population' , 'City_Population', 'COLUMN';
@@ -858,10 +1113,10 @@ SELECT * FROM final_table
 
 UPDATE  merged_dataset_table
 SET City = 'Montreal'
-WHERE City = 'Sainte-Adèle'
+WHERE City = 'Sainte-AdÃ¨le'
 
 SELECT * FROM merged_dataset_table
-WHERE City like 'Montréal%'
+WHERE City like 'MontrÃ©al%'
 
 
 
@@ -990,12 +1245,12 @@ WHERE City like 'Montréal%'
 ---- CHANGE GEO COLUMNS 
 ---- renaming GEO columns field 
 
----- REPLACING Québec, Quebec TO Québec City, Quebec
+---- REPLACING QuÃ©bec, Quebec TO QuÃ©bec City, Quebec
 --SELECT *  FROM income_table
 --WHERE Province  LIKE '%Alberta%';
 
 --UPDATE income_table
---SET GEO = REPLACE(GEO,'Québec, Quebec','Québec City, Quebec')
+--SET GEO = REPLACE(GEO,'QuÃ©bec, Quebec','QuÃ©bec City, Quebec')
 
 ---- REPLACING Ottawa-Gatineau, Ontario/Quebec TO Ottawa, Ontario
 --UPDATE income_table
@@ -1257,3 +1512,4 @@ WHERE City like 'Montréal%'
 
 
 ------ End of Draft message-----
+
