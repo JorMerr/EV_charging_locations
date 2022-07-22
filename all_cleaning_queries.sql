@@ -1,4 +1,4 @@
---- CLEANING THE DATA
+﻿--- CLEANING THE DATA
 
 
 ------------------------------------------------------------------------------
@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS Income_table
 -- show all columns 
 SELECT * FROM income_table;
 SELECT COUNT(*) FROM income_table
+WHERE UID LIKE 'S%'
 
 
 -- drop un-necessary columns(UOM,SYMBOL,TERMINATED,DECIMALS,STATS)
@@ -63,6 +64,35 @@ DELETE
 FROM income_table
 WHERE Median_Income  NOT LIKE 'Median income (excluding zeros)'
 
+DELETE
+FROM income_table
+WHERE Income_source   LIKE 'Employment Insurance (EI) benefits'
+
+DELETE
+FROM income_table
+WHERE Income_source   LIKE 'Market income'
+
+DELETE
+FROM income_table
+WHERE Income_source   LIKE 'Employment income'
+
+DELETE
+FROM income_table
+WHERE Income_source   LIKE 'Investment income'
+
+DELETE
+FROM income_table
+WHERE Income_source   LIKE 'Retirement income'
+
+
+
+DELETE
+FROM income_table
+WHERE Sex  LIKE 'Females'
+
+SELECT * 
+FROM income_table
+WHERE REF_DATE = 2020
 -- drop scalar_id column 
 
 ALTER TABLE income_table
@@ -92,12 +122,12 @@ SELECT *  FROM income_table;
 -- CHANGE GEO COLUMNS 
 -- renaming GEO columns field 
 
--- REPLACING Qu�bec, Quebec TO Qu�bec City, Quebec
+-- REPLACING Québec, Quebec TO Québec City, Quebec
 SELECT *  FROM income_table
 WHERE Province  LIKE '%Alberta%';
 
 UPDATE income_table
-SET GEO = REPLACE(GEO,'Qu�bec, Quebec','Qu�bec City, Quebec')
+SET GEO = REPLACE(GEO,'Québec, Quebec','Québec City, Quebec')
 
 -- REPLACING Ottawa-Gatineau, Ontario/Quebec TO Ottawa, Ontario
 UPDATE income_table
@@ -144,7 +174,15 @@ SET GEO = REPLACE(GEO,'British Columbia','British Columbia,British Columbia')
 UPDATE income_table
 SET GEO = REPLACE(GEO,'New Brunswick','New Brunswick,New Brunswick');
 
+-- trim province, city  Column for income table
 
+UPDATE income_table
+SET City = TRIM(City)
+
+UPDATE income_table
+SET Province = TRIM(Province)
+
+-- 
 
 SELECT *
 ,RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO)) AS Province
@@ -223,9 +261,21 @@ SET UID = RIGHT(DGUID,LEN(DGUID)-4)
 ALTER TABLE Income_table
 DROP COLUMN  DGUID
 
+-- KEEPING INCOME FOR 16 YEARS AND OVER
+
+DELETE 
+FROM Income_table 
+WHERE Age_group NOT like '%16 years and over%'
+
 -- checking the cleaned dataset
 SELECT * 
 FROM Income_table
+WHERE Income_source like '%Total income%' and Sex like '%Both sexes%'
+
+-- DROP ANYTHING ELSE KEEP ONLY CITIES
+DELETE
+FROM income_table
+WHERE UID LIKE 'A%'
 
 
 -----------------------------End of Cleaning Income_Data set------------
@@ -333,6 +383,7 @@ DROP TABLE IF EXISTS final_table
 
 SELECT * FROM final_table
 
+
 SELECT i.UID,p.Province_ID,i.REF_DATE,i.Age_group,i.Province,i.City,i.Total_Income,i.Income_source, p.POPULATION
 INTO 
 	final_table
@@ -410,6 +461,7 @@ WHERE City like '%Ontario%'
 -- checking the cleaned data
 SELECT *
 FROM final_table
+WHERE UID like '%A00053520005%'
 
 ---------------------- End of Cleaning final_table-------------------- 
 
@@ -503,7 +555,9 @@ DELETE
 FROM lfs_table 
 WHERE Labour_force_characteristics Like '%Labour force%'
 
-
+-- trim province 
+UPDATE lfs_table
+SET Province = TRIM(Province)
 
 UPDATE lfs_table
 SET VALUE = VALUE*100
@@ -536,7 +590,7 @@ FROM lfs_table
 -- checking the cleaned data set
 SELECT * 
 FROM lfs_table
-WHERE City_ID like 'S%'
+WHERE City_ID like '%Toronto%'
 
 --------------------------------------------
 
@@ -549,6 +603,31 @@ WHERE City_ID like 'S%'
 ---- DRAFT MESSAGE----
 
 
+SELECT * 
+FROM final_table f 
+FULL OUTER JOIN lfs_table l
+ON l.City_ID = f.UID
+
+SELECT * 
+FROM final_table f 
+LEFT JOIN lfs_table l
+ON l.City_ID = f.UID
+
+
+SELECT * 
+FROM lfs_table
+
+SELECT * 
+FROM final_table
+
+SELECT DISTINCT Income_source FROM final_table
+WHERE 
+
+-- 
+-- from final_table consider Total income, Social assistance and drop the rest
+-- trim to remove space to lfs table 
+
+
 -- case statement to generate UID for the joins 
 
 -- get population from 2016 to 2020, join the population and income according to year and city
@@ -559,9 +638,11 @@ WHERE City_ID like 'S%'
 
 -- use GCP bigquery and connect to S3
 -- clean the data from GCP 
---SELECT COUNT(*) FROM census_table
---SELECT * FROM census_table
+DROP TABLE IF EXISTS census_table
 
+SELECT COUNT(*) FROM census_table
+SELECT * FROM census_table
+WHERE GEO_LEVEL like '%Ottawa%'
 --SELECT * FROM census_table
 --WHERE GEO_NAME = 'Nunavut';
 
@@ -669,6 +750,31 @@ UPDATE  EV_stations_locations
 SET Status_Code =  'Available'
 WHERE Status_Code like 'T'
 
+-- changing Quebec city name 
+
+UPDATE  EV_stations_locations
+SET City =  'Quebec City'
+WHERE City like 'Ville de Québec'
+
+UPDATE  EV_stations_locations
+SET City =  'Saint-Jerome'
+WHERE City like 'St-Jérôme'
+
+UPDATE  EV_stations_locations
+SET City =  'Montreal'
+WHERE Stations_ID = 150515
+
+--150503
+--150515
+
+
+-- cleaning the rest of double names from QC
+
+UPDATE  EV_stations_locations
+SET City =  'Saint‐Bruno'
+WHERE City like 'St‐Bruno'
+
+
 -- setting the city_ID will be done when i Join tables
 -- replace the null values to City code
 
@@ -682,20 +788,34 @@ GROUP BY City
 --ALTER TABLE EV_stations_locations
 --ADD Total_stations_Per_City INT
 
---ALTER TABLE EV_stations_locations
---DROP COLUMN Total_stations_Per_City 
-
---UPDATE EV_stations_locations 
---SET Total_stations_Per_City = Count(City)
-
--- checking the cleaned data
+-- number of ev stations  in each city
 
 SELECT * FROM EV_stations_locations
 
-WHERE CITY LIKE 'Calgary'
+WHERE CITY LIKE 'Rivière%'
+
+-- CREATE A COLUMN TO HOLD TOTAL STATIONS 
+
+ALTER TABLE EV_stations_locations 
+ADD Total_stations INT
+
+update EV_stations_locations 
+SET Total_stations  = (SELECT Count(Stations_ID) as Total_stations
+FROM  EV_stations_locations GROUP BY City)
+
+-- total number of stations per city
+
+SELECT  
+ City, Count(Stations_ID) as Total_stations
+FROM  EV_stations_locations 
+GROUP BY City
 
 
 
+
+
+SELECT * FROM EV_stations_locations 
+WHERE City LIKE '%Rivière%'
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -711,9 +831,14 @@ WHERE CITY LIKE 'Calgary'
 -- drop REF_DATE
 -- group by year and keep the total 
 -- rename VALUE column to total ev cars
+-- drop the Geo_ID starts with As and keep the city(starts by S)
 
+-- number of ev cars in this particular city
+-- comparison of ev cars in city per available stations 
 
 SELECT * FROM EV_registrations_cities_table
+
+WHERE GEO LIKE '%Vancouver%'
 
 
 DROP TABLE IF EXISTS EV_registrations_cities_table
@@ -735,5 +860,216 @@ DROP TABLE IF EXISTS EV_registrations_cities_table
 -- Join to final on Province
 
 
+-- Renaming columns 
 
-SELECT * FROM EV_registrations_provinces_table
+sp_RENAME 'EV_registrations_provinces_table.GEO' , 'Provinces', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.VALUE' , 'Total_Ev_Cars_Per_Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.Geo_ID' , 'Province_ID', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.Provinces' , 'Province', 'COLUMN';
+
+-- Drop Un Necessary columns 
+ALTER TABLE EV_registrations_provinces_table
+DROP COLUMN column1
+
+-- changig the REF Date to Year 
+--SELECT REF_DATE, 
+--LEFT(REF_DATE,4) as tobe_KEPT,
+--RIGHT(REF_DATE,LEN(DGUID)-4) AS to_DROP
+--FROM EV_registrations_provinces_table;
+
+-- CREATE A NEW COLUMN TO STORE YEAR
+
+ALTER TABLE EV_registrations_provinces_table
+ADD REF_DATE2 INT
+
+ALTER TABLE EV_registrations_provinces_table
+DROP COLUMN  YEAR 
+
+UPDATE EV_registrations_provinces_table
+SET REF_DATE2 = DATEPART(YEAR FROM REF_DATE)
+
+ALTER TABLE EV_registrations_provinces_table
+DROP COLUMN  REF_DATE
+
+
+sp_RENAME 'EV_registrations_provinces_table.REF_DATE2' , 'REF_DATE', 'COLUMN';
+
+SELECT  Province
+FROM EV_registrations_provinces_table
+GROUP BY Province
+
+SELECT  *
+FROM EV_registrations_provinces_table
+
+-- group by REF_DATE 
+-- HAVE THE PROVINCES AND TOTAL PER YEAR, 
+
+
+
+--------------------------------------------------------------------------------------------End of Above Queries--------------------------------------
+
+-- New Ideas
+-- cleaning new data --
+-- columns to be considered below 
+
+--Population
+--Electricity rate (Provincial average)
+--Provincial EV incentives (Yes or No)
+--Employment Rate
+--Unemployment Rate
+--EV registrations
+--Median Income (If we can get it)
+-- Education level
+
+
+SELECT * FROM lfs_table;
+SELECT * FROM income_table;
+SELECT * FROM population_table;
+SELECT * FROM EV_registrations_provinces_table;
+SELECT * FROM EV_registrations_cities_table;
+SELECT * FROM EV_stations_locations;
+SELECT * FROM incentives_table;
+
+SELECT * FROM cities_table
+
+
+
+------ Incentives table 
+
+sp_RENAME 'incentives_table.Electricity rate_per 1000kWh' , 'electricity_rate_per_1000kWh', 'COLUMN';
+sp_RENAME 'incentives_table.Max# Rebate' , 'Total_Rebate', 'COLUMN';
+sp_RENAME 'incentives_table.Provincial Incentives' , 'Provincial_Incentives', 'COLUMN';
+
+
+
+
+
+
+DROP TABLE IF EXISTS cities_table
+
+-- Insert Provice from lfs table to cities table 
+
+--1- FROM INCOME TABLE 
+
+UPDATE cities_table 
+	SET cities_table.Province = (SELECT DISTINCT income_table.Province
+FROM  income_table 
+WHERE cities_table.City_Name = income_table.City)
+
+--2- FROM LFS TABLE 
+UPDATE cities_table 
+	SET cities_table.Province = (SELECT DISTINCT lfs_table.Province
+FROM  lfs_table 
+WHERE cities_table.City_Name = lfs_table.City  AND cities_table.Province IS NULL )
+
+
+
+
+-- changing the column dtype size
+ALTER TABLE cities_table
+ADD Province varchar(255);
+
+ALTER TABLE cities_table
+DROP COLUMN Province;
+
+
+
+SELECT * FROM cities_table
+WHERE  City_Electricity_Rate IS   NULL
+
+
+
+SELECT * FROM cities_table
+WHERE city LIKE 'St-Jérôme%'
+
+
+SELECT * 
+FROM cities_table c
+INNER JOIN EV_registrations_cities_table e
+ON c.City_Name = e.GEO
+
+
+-- removing duplicates from city_table 
+WITH cte as (
+	SELECT 
+	City_Name,
+	ROW_NUMBER () OVER (
+	PARTITION BY 
+	City_Name
+	ORDER BY City_Name) row_num
+	FROM cities_table
+	)
+	DELETE FROM cte
+	WHERE row_num > 1
+
+
+--- adding electricity rate to each city, assuming the rate of electricity is equal to the rate of province
+
+UPDATE cities_table 
+	SET cities_table.City_Electricity_Rate = (SELECT DISTINCT incentives_table.electricity_rate_per_1000kWh
+FROM  incentives_table
+WHERE cities_table.province_name = incentives_table.Province)
+
+
+-- INCENTIVE STATUS 
+ALTER TABLE cities_table
+ADD incentives_status nvarchar(255)
+
+
+UPDATE cities_table 
+	SET incentives_status = 'YES'
+	FROM  cities_table 
+WHERE province_id != 'ON'
+
+UPDATE cities_table 
+	SET incentives_status = 'NO'
+	FROM  cities_table 
+WHERE province_id = 'ON'
+
+
+
+
+-- add new column for incentives per province Y or N and amount
+-- all provinces has incentives except ON which has incentives on used ev and through an NGO
+
+
+
+
+-- remove social assistance 
+-- drop employment rate
+
+-- 13.0, rename column as electricity_rate_perKwh
+
+ALTER TABLE cities_table
+DROP COLUMN Social_assistance;
+
+ALTER TABLE cities_table
+DROP COLUMN Employment_Rate;
+
+
+-- use CTE to update cities_table.City_EV_stations_locations
+
+
+WITH stationsCTE(City,Total_stations)
+AS
+(
+SELECT  
+ City, Count(Stations_ID) as Total_stations
+FROM  EV_stations_locations 
+GROUP BY City
+)
+
+UPDATE cities_table
+SET cities_table.City_EV_stations_locations = s.Total_stations
+FROM cities_table c, stationsCTE s
+WHERE	c.City = s.City
+
+-- updating french names 
+UPDATE  cities_table
+SET City =  'Rivière-du-Loup'
+WHERE City like 'Rivière du Loup'
+
+
+-- CHECKING THE DATASET
+SELECT * FROM cities_table
+where City_EV_stations_locations IS NULL

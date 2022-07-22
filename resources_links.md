@@ -39,5 +39,11 @@ Population and dwelling counts: Canada, provinces and territories
 link : https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=9810000101
 
 
+## electricity rate source 
+https://www.canadadrives.ca/blog/news/government-fuels-electric-vehicle-demand-with-electric-car-rebates-in-canada-and-top-affordable-electric-vehicles
+
+## city and population data 
+https://simplemaps.com/data/canada-cities
+
 
  
