@@ -796,21 +796,20 @@ DROP COLUMN  REF_DATE
 
 sp_RENAME 'EV_registrations_provinces_table.REF_DATE2' , 'REF_DATE', 'COLUMN';
 
-SELECT  Province
+SELECT  *
 FROM EV_registrations_provinces_table
 GROUP BY Province
 
-SELECT  *
+SELECT DISTINCT Province, 
 FROM EV_registrations_provinces_table
-
--- group by REF_DATE 
+GROUP BY Province
 -- HAVE THE PROVINCES AND TOTAL PER YEAR, 
-
 
 
 --------------------------------------------------------------------------------------------End of Above Queries--------------------------------------
 
--- New Ideas
+-- New Ideas ++++ NOTES ++++ TO-DO-LIST--------------------------------------------
+
 -- cleaning new data --
 -- columns to be considered below 
 
@@ -822,18 +821,15 @@ FROM EV_registrations_provinces_table
 --EV registrations
 --Median Income (If we can get it)
 -- Education level
+-- add unemployment rate to the file 
+-- add median income(median income is based on province)
+-- ev_registration by city( after cleaning the file)
+-- add ev_registration by province (create a new column)
+-- add a column for province population
+-- get province unemployment rate and add to the final table, this is because we do not have enough data of unemployement rate 
 
 
-SELECT * FROM lfs_table;
-SELECT * FROM income_table;
-SELECT * FROM province_populatio_table;
-SELECT * FROM EV_registrations_provinces_table;
-SELECT * FROM EV_registrations_cities_table;
-SELECT * FROM EV_stations_locations;
-SELECT * FROM incentives_table;
-
-SELECT * FROM final_table
-
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 ------ Incentives table 
 
@@ -971,6 +967,48 @@ SET City =  'Rivière-du-Loup'
 WHERE City like 'Rivière du Loup'
 
 
+-- adding unemployement rate to our table 
+UPDATE final_table 
+SET final_table.Unemployment_Rate = p.province_Unemp_rate
+FROM provincial_unemployment_table p
+WHERE final_table.province_name= p.Province
+
+
+-- adding median income, this is from province median income
+--UPDATE final_table 
+--SET final_table.City_Median_Income = 
+--FROM 
+--WHERE final_table.City_Median_Income= 
+
+
 -- CHECKING THE DATASET
 SELECT * FROM final_table
 where City_EV_stations_locations IS NULL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM lfs_table;
+SELECT * FROM income_table;
+SELECT * FROM province_population_table;
+SELECT * FROM EV_registrations_provinces_table;
+SELECT * FROM EV_registrations_cities_table;
+SELECT * FROM EV_stations_locations;
+SELECT * FROM incentives_table;
+SELECT * FROM provincial_unemployment_table;
+SELECT * FROM final_table
