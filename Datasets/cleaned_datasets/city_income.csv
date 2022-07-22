@@ -1,0 +1,161 @@
+,City,Province,City_ID,Median_Income($)
+2,Corner Brook ,Newfoundland and Labrador,2021S0504015,37600
+3,Gander ,Newfoundland and Labrador,2021S0504011,40000
+4,Grand Falls-Windsor ,Newfoundland and Labrador,2021S0504010,35600
+5,St. John's ,Newfoundland and Labrador,2021S0503001,42800
+7,Charlottetown ,Prince Edward Island,2021S0504105,39600
+8,Summerside ,Prince Edward Island,2021S0504110,36800
+10,Cape Breton ,Nova Scotia,2021S0504225,34000
+11,Halifax ,Nova Scotia,2021S0503205,42000
+12,Kentville ,Nova Scotia,2021S0504210,35600
+13,New Glasgow ,Nova Scotia,2021S0504220,36400
+14,Truro ,Nova Scotia,2021S0504215,36400
+16,Bathurst ,New Brunswick,2021S0504328,34800
+17,Campbellton ,New Brunswick,2021S0504330,33600
+18,Campbellton ,New Brunswick,2021S050613330,33600
+19,Campbellton ,Quebec,2021S050624330,31000
+20,Edmundston ,New Brunswick,2021S0504335,36400
+21,Fredericton ,New Brunswick,2021S0503320,41600
+22,Miramichi ,New Brunswick,2021S0504329,37200
+23,Moncton ,New Brunswick,2021S0503305,40000
+24,Saint John ,New Brunswick,2021S0503310,40000
+26,Alma ,Quebec,2021S0504410,40000
+27,Amos ,Quebec,2021S0504481,44000
+28,Baie-Comeau ,Quebec,2021S0504406,44400
+29,Cowansville ,Quebec,2021S0504437,36800
+30,Dolbeau-Mistassini ,Quebec,2021S0504411,37600
+31,Drummondville ,Quebec,2021S0503447,38800
+32,Granby ,Quebec,2021S0504450,40000
+33,Joliette ,Quebec,2021S0504456,38000
+34,Lachute ,Quebec,2021S0504468,34000
+35,Matane ,Quebec,2021S0504403,36400
+36,Montréal ,Quebec,2021S0503462,40800
+37,Québec ,Quebec,2021S0503421,46000
+38,Rimouski ,Quebec,2021S0504404,40800
+39,Rivière-du-Loup ,Quebec,2021S0504405,40800
+40,Rouyn-Noranda ,Quebec,2021S0504485,44000
+41,Saguenay ,Quebec,2021S0503408,41600
+42,Saint-Georges ,Quebec,2021S0504428,40000
+43,Saint-Hyacinthe ,Quebec,2021S0504452,38800
+44,Sainte-Agathe-des-Monts ,Quebec,2021S0504467,36400
+45,Sainte-Marie ,Quebec,2021S0504423,44000
+46,Salaberry-de-Valleyfield ,Quebec,2021S0504465,38000
+47,Sept-Îles ,Quebec,2021S0504412,45600
+48,Shawinigan ,Quebec,2021S0504444,35200
+49,Sherbrooke ,Quebec,2021S0503433,39200
+50,Sorel-Tracy ,Quebec,2021S0504454,36800
+51,Thetford Mines ,Quebec,2021S0504430,36000
+52,Trois-Rivières ,Quebec,2021S0503442,38800
+53,Val-d'Or ,Quebec,2021S0504480,44000
+54,Victoriaville ,Quebec,2021S0504440,38000
+56,Barrie ,Ontario,2021S0503568,42000
+57,Belleville - Quinte West ,Ontario,2021S0503522,40000
+58,Brantford ,Ontario,2021S0503543,40800
+59,Brockville ,Ontario,2021S0504512,38800
+60,Centre Wellington ,Ontario,2021S0504531,47600
+61,Chatham-Kent ,Ontario,2021S0504556,38000
+62,Cobourg ,Ontario,2021S0504527,40800
+63,Collingwood ,Ontario,2021S0504567,42000
+64,Cornwall ,Ontario,2021S0504501,36800
+65,Elliot Lake ,Ontario,2021S0504582,29800
+66,Essa ,Ontario,2021S0504563,47200
+67,Greater Sudbury ,Ontario,2021S0503580,44800
+68,Guelph ,Ontario,2021S0503550,44800
+69,Hamilton ,Ontario,2021S0503537,42400
+70,Hawkesbury ,Quebec,2021S0504502,33200
+71,Hawkesbury ,Ontario,2021S050635502,33200
+72,Hawkesbury ,Quebec,2021S050624502,34800
+73,Ingersoll ,Ontario,2021S0504533,44400
+74,Kawartha Lakes ,Ontario,2021S0504530,39200
+75,Kenora ,Ontario,2021S0504598,48400
+76,Kingston ,Ontario,2021S0503521,42800
+77,Kitchener - Cambridge - Waterloo ,Ontario,2021S0503541,42400
+78,London ,Ontario,2021S0503555,40400
+79,Midland ,Ontario,2021S0504571,36400
+80,Norfolk ,Ontario,2021S0504547,39600
+81,North Bay ,Ontario,2021S0504575,40400
+82,Orillia ,Ontario,2021S0504569,37200
+83,Oshawa ,Ontario,2021S0503532,44000
+84,Ottawa - Gatineau ,Quebec,2021S0503505,49200
+85,Ottawa - Gatineau ,Ontario,2021S050535505,50000
+86,Ottawa - Gatineau ,Quebec,2021S050524505,47600
+87,Owen Sound ,Ontario,2021S0504566,38400
+88,Pembroke ,Ontario,2021S0504515,39600
+89,Petawawa ,Ontario,2021S0504516,57600
+90,Peterborough ,Ontario,2021S0503529,39200
+91,Port Hope ,Ontario,2021S0504528,42800
+92,Sarnia ,Ontario,2021S0504562,42400
+93,Sault Ste. Marie ,Ontario,2021S0504590,40800
+94,St. Catharines - Niagara ,Ontario,2021S0503539,38000
+95,Stratford ,Ontario,2021S0504553,42400
+96,Thunder Bay ,Ontario,2021S0503595,43200
+97,Tillsonburg ,Ontario,2021S0504546,39600
+98,Timmins ,Ontario,2021S0504586,43600
+99,Toronto ,Ontario,2021S0503535,39600
+100,Wasaga Beach ,Ontario,2021S0504565,36800
+101,Windsor ,Ontario,2021S0503559,40000
+102,Woodstock ,Ontario,2021S0504544,42000
+104,Brandon ,Manitoba,2021S0504610,41600
+105,Portage la Prairie ,Manitoba,2021S0504607,39600
+106,Steinbach ,Manitoba,2021S0504605,36400
+107,Thompson ,Manitoba,2021S0504640,46400
+108,Winkler ,Manitoba,2021S0504603,35200
+109,Winnipeg ,Manitoba,2021S0503602,40400
+111,Estevan ,Saskatchewan,2021S0504750,48800
+112,Moose Jaw ,Saskatchewan,2021S0504715,41600
+113,North Battleford ,Saskatchewan,2021S0504735,42400
+114,Prince Albert ,Saskatchewan,2021S0504745,41200
+115,Regina ,Saskatchewan,2021S0503705,47200
+116,Saskatoon ,Saskatchewan,2021S0503725,44000
+117,Swift Current ,Saskatchewan,2021S0504720,44000
+118,Weyburn ,Saskatchewan,2021S0504755,44800
+119,Yorkton ,Saskatchewan,2021S0504710,42400
+121,Brooks ,Alberta,2021S0504806,46000
+122,Calgary ,Alberta,2021S0503825,44800
+123,Camrose ,Alberta,2021S0504833,41200
+124,Canmore ,Alberta,2021S0504828,50400
+125,Edmonton ,Alberta,2021S0503835,45600
+126,Grande Prairie ,Alberta,2021S0504850,49600
+127,High River ,Alberta,2021S0504821,41200
+128,Lacombe ,Alberta,2021S0504832,42400
+129,Lethbridge ,Alberta,2021S0503810,42000
+130,Lloydminster ,Saskatchewan,2021S0504840,46400
+131,Lloydminster ,Alberta,2021S050648840,47600
+132,Lloydminster ,Saskatchewan,2021S050647840,45200
+133,Medicine Hat ,Alberta,2021S0504805,41200
+134,Okotoks ,Alberta,2021S0504820,48400
+135,Red Deer ,Alberta,2021S0503830,42800
+136,Strathmore ,Alberta,2021S0504826,42800
+137,Sylvan Lake ,Alberta,2021S0504831,45200
+138,Wetaskiwin ,Alberta,2021S0504865,38400
+139,Wood Buffalo ,Alberta,2021S0504860,72000
+141,Abbotsford - Mission ,British Columbia,2021S0503932,38400
+142,Campbell River ,British Columbia,2021S0504944,40000
+143,Chilliwack ,British Columbia,2021S0503930,39600
+144,Courtenay ,British Columbia,2021S0504943,40000
+145,Cranbrook ,British Columbia,2021S0504905,42000
+146,Dawson Creek ,British Columbia,2021S0504975,44800
+147,Duncan ,British Columbia,2021S0504937,38400
+148,Fort St. John ,British Columbia,2021S0504977,52000
+149,Kamloops ,British Columbia,2021S0503925,42800
+150,Kelowna ,British Columbia,2021S0503915,41600
+151,Ladysmith ,British Columbia,2021S0504936,38800
+152,Nanaimo ,British Columbia,2021S0503938,40000
+153,Nelson ,British Columbia,2021S0504907,39600
+154,Parksville ,British Columbia,2021S0504939,39200
+155,Penticton ,British Columbia,2021S0504913,38400
+156,Port Alberni ,British Columbia,2021S0504940,36800
+157,Powell River ,British Columbia,2021S0504945,36800
+158,Prince George ,British Columbia,2021S0504970,45600
+159,Prince Rupert ,British Columbia,2021S0504955,43600
+160,Quesnel ,British Columbia,2021S0504952,37200
+161,Salmon Arm ,British Columbia,2021S0504920,38400
+162,Squamish ,British Columbia,2021S0504934,50400
+163,Terrace ,British Columbia,2021S0504965,44400
+164,Trail ,British Columbia,2021S0504910,42000
+165,Vancouver ,British Columbia,2021S0503933,40800
+166,Vernon ,British Columbia,2021S0504918,40000
+167,Victoria ,British Columbia,2021S0503935,45600
+168,Williams Lake ,British Columbia,2021S0504950,40400
+170,Whitehorse ,Yukon,2021S0504990,58400
+172,Yellowknife , N.W.T.,2021S0504995,72000

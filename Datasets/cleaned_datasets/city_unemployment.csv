@@ -1,0 +1,35 @@
+,City,Province,City_ID,Unemployment_rate(%)
+0,St. John's, Newfoundland and Labrador,2011S0503001,8.7
+1,Halifax, Nova Scotia,2011S0503205,7.3
+2,Moncton, New Brunswick,2011S0503305,9.0
+3,Saint John, New Brunswick,2011S0503310,11.0
+4,Saguenay, Quebec,2011S0503408,5.7
+5,Québec, Quebec,2011S0503421,4.1
+6,Sherbrooke, Quebec,2011S0503433,6.0
+7,Trois-Rivières, Quebec,2011S0503442,5.9
+8,Montréal, Quebec,2011S0503462,8.1
+9,Ottawa-Gatineau,Quebec,2011S050524505,7.0
+10,Ottawa-Gatineau,Ontario,2011S050535505,6.6
+11,Kingston, Ontario,2011S0503521,5.9
+12,Peterborough, Ontario,2011S0503529,13.5
+13,Oshawa, Ontario,2011S0503532,7.8
+14,Toronto, Ontario,2011S0503535,10.7
+15,Hamilton, Ontario,2011S0503537,8.1
+16,St. Catharines-Niagara, Ontario,2011S0503539,9.1
+17,Kitchener-Cambridge-Waterloo, Ontario,2011S0503541,8.5
+18,Brantford, Ontario,2011S0503543,6.1
+19,Guelph, Ontario,2011S0503550,5.8
+20,London, Ontario,2011S0503555,7.7
+21,Windsor, Ontario,2011S0503559,11.1
+22,Barrie, Ontario,2011S0503568,12.1
+23,Greater Sudbury, Ontario,2011S0503580,7.7
+24,Thunder Bay, Ontario,2011S0503595,7.6
+25,Winnipeg, Manitoba,2011S0503602,8.4
+26,Regina, Saskatchewan,2011S0503705,6.3
+27,Saskatoon, Saskatchewan,2011S0503725,8.1
+28,Calgary, Alberta,2011S0503825,10.4
+29,Edmonton, Alberta,2011S0503835,11.1
+30,Kelowna, British Columbia,2011S0503915,4.5
+31,Abbotsford-Mission, British Columbia,2011S0503932,8.4
+32,Vancouver, British Columbia,2011S0503933,7.4
+33,Victoria, British Columbia,2011S0503935,5.8
