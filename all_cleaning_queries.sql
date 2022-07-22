@@ -542,11 +542,6 @@ SELECT * FROM province_edu_rate
 
 
 
-
-
-
-
-
 -----------------------------------------------------------------------------------
 
 					-- cleaning  final_table
@@ -837,36 +832,6 @@ SELECT * FROM final_table
 
 --------------------------End of Cleaning Final Table---------------------------------------------------------
 -----------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- updading French names in merged_dataset_table
-
-UPDATE  merged_dataset_table
-SET City = 'Montreal'
-WHERE City = 'Sainte-Adèle'
-
-SELECT * FROM merged_dataset_table
-WHERE City like 'Montréal%'
-
-
-
-
-
 
 
 ------------------------------------------------------------------------------
