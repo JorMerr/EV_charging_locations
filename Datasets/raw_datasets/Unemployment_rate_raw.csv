@@ -1,0 +1,47 @@
+﻿REF_DATE,GEO,DGUID,Labour force characteristics,Statistics,Data type,UOM,UOM_ID,SCALAR_FACTOR,SCALAR_ID,VECTOR,COORDINATE,VALUE
+Dec-20,Canada,2016A000011124,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445772,1.5.1.1,8.7
+Dec-20,Newfoundland and Labrador,2016A000210,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445786,2.5.1.1,12.5
+Dec-20,"St. John's, Newfoundland and Labrador",2011S0503001,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445800,3.5.1.1,8.7
+Dec-20,Prince Edward Island,2016A000211,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445814,4.5.1.1,10.1
+Dec-20,Nova Scotia,2016A000212,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445828,5.5.1.1,7.9
+Dec-20,"Halifax, Nova Scotia",2011S0503205,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445842,6.5.1.1,7.3
+Dec-20,New Brunswick,2016A000213,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445856,7.5.1.1,9.6
+Dec-20,"Moncton, New Brunswick",2011S0503305,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445870,8.5.1.1,9
+Dec-20,"Saint John, New Brunswick",2011S0503310,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445884,9.5.1.1,11
+Dec-20,Quebec,2016A000224,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445898,10.5.1.1,7.2
+Dec-20,"Saguenay, Quebec",2011S0503408,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445912,11.5.1.1,5.7
+Dec-20,"Québec, Quebec",2011S0503421,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445926,12.5.1.1,4.1
+Dec-20,"Sherbrooke, Quebec",2011S0503433,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445940,13.5.1.1,6
+Dec-20,"Trois-Rivières, Quebec",2011S0503442,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445954,14.5.1.1,5.9
+Dec-20,"Montréal, Quebec",2011S0503462,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445968,15.5.1.1,8.1
+Dec-20,Ontario,2016A000235,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445982,16.5.1.1,9.4
+Dec-20,"Ottawa-Gatineau, Ontario/Quebec",2011S0503505,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91445996,17.5.1.1,6.7
+Dec-20,"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2011S050524505,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446010,18.5.1.1,7
+Dec-20,"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2011S050535505,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446024,19.5.1.1,6.6
+Dec-20,"Kingston, Ontario",2011S0503521,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446038,20.5.1.1,5.9
+Dec-20,"Peterborough, Ontario",2011S0503529,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446052,21.5.1.1,13.5
+Dec-20,"Oshawa, Ontario",2011S0503532,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446066,22.5.1.1,7.8
+Dec-20,"Toronto, Ontario",2011S0503535,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446080,23.5.1.1,10.7
+Dec-20,"Hamilton, Ontario",2011S0503537,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446094,24.5.1.1,8.1
+Dec-20,"St. Catharines-Niagara, Ontario",2011S0503539,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446108,25.5.1.1,9.1
+Dec-20,"Kitchener-Cambridge-Waterloo, Ontario",2011S0503541,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446122,26.5.1.1,8.5
+Dec-20,"Brantford, Ontario",2011S0503543,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446136,27.5.1.1,6.1
+Dec-20,"Guelph, Ontario",2011S0503550,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446150,28.5.1.1,5.8
+Dec-20,"London, Ontario",2011S0503555,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446164,29.5.1.1,7.7
+Dec-20,"Windsor, Ontario",2011S0503559,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446178,30.5.1.1,11.1
+Dec-20,"Barrie, Ontario",2011S0503568,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446192,31.5.1.1,12.1
+Dec-20,"Greater Sudbury, Ontario",2011S0503580,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446206,32.5.1.1,7.7
+Dec-20,"Thunder Bay, Ontario",2011S0503595,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446220,33.5.1.1,7.6
+Dec-20,Manitoba,2016A000246,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446234,34.5.1.1,7.6
+Dec-20,"Winnipeg, Manitoba",2011S0503602,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446248,35.5.1.1,8.4
+Dec-20,Saskatchewan,2016A000247,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446262,36.5.1.1,7
+Dec-20,"Regina, Saskatchewan",2011S0503705,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446276,37.5.1.1,6.3
+Dec-20,"Saskatoon, Saskatchewan",2011S0503725,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446290,38.5.1.1,8.1
+Dec-20,Alberta,2016A000248,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446304,39.5.1.1,10.9
+Dec-20,"Calgary, Alberta",2011S0503825,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446318,40.5.1.1,10.4
+Dec-20,"Edmonton, Alberta",2011S0503835,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446332,41.5.1.1,11.1
+Dec-20,British Columbia,2016A000259,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446346,42.5.1.1,7.4
+Dec-20,"Kelowna, British Columbia",2011S0503915,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446360,43.5.1.1,4.5
+Dec-20,"Abbotsford-Mission, British Columbia",2011S0503932,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446374,44.5.1.1,8.4
+Dec-20,"Vancouver, British Columbia",2011S0503933,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446388,45.5.1.1,7.4
+Dec-20,"Victoria, British Columbia",2011S0503935,Unemployment rate,Estimate,Seasonally adjusted,Percentage,242,units,0,v91446402,46.5.1.1,5.8

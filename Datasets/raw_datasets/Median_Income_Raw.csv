@@ -1,0 +1,175 @@
+REF_DATE,GEO,DGUID,Age (11),Gender (3a),Total income groups (24),Year (2),UOM,UOM_ID,SCALAR_FACTOR,SCALAR_ID,VECTOR,COORDINATE,VALUE,STATUS,SYMBOL,TERMINATED,DECIMALS
+2021,Canada,2021A000011124,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,1.1.1.24.1,41200,,,,0
+2021,Newfoundland and Labrador,2021A000210,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,2.1.1.24.1,36800,,,,0
+2021,"Corner Brook (CA), N.L.",2021S0504015,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,3.1.1.24.1,37600,,,,0
+2021,"Gander (CA), N.L.",2021S0504011,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,4.1.1.24.1,40000,,,,0
+2021,"Grand Falls-Windsor (CA), N.L.",2021S0504010,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,5.1.1.24.1,35600,,,,0
+2021,"St. John's (CMA), N.L.",2021S0503001,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,6.1.1.24.1,42800,,,,0
+2021,Prince Edward Island,2021A000211,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,7.1.1.24.1,38800,,,,0
+2021,"Charlottetown (CA), P.E.I.",2021S0504105,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,8.1.1.24.1,39600,,,,0
+2021,"Summerside (CA), P.E.I.",2021S0504110,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,9.1.1.24.1,36800,,,,0
+2021,Nova Scotia,2021A000212,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,10.1.1.24.1,38000,,,,0
+2021,"Cape Breton (CA), N.S.",2021S0504225,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,11.1.1.24.1,34000,,,,0
+2021,"Halifax (CMA), N.S.",2021S0503205,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,12.1.1.24.1,42000,,,,0
+2021,"Kentville (CA), N.S.",2021S0504210,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,13.1.1.24.1,35600,,,,0
+2021,"New Glasgow (CA), N.S.",2021S0504220,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,14.1.1.24.1,36400,,,,0
+2021,"Truro (CA), N.S.",2021S0504215,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,15.1.1.24.1,36400,,,,0
+2021,New Brunswick,2021A000213,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,16.1.1.24.1,37600,,,,0
+2021,"Bathurst (CA), N.B.",2021S0504328,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,17.1.1.24.1,34800,,,,0
+2021,"Campbellton (CA), N.B./Que.",2021S0504330,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,18.1.1.24.1,33600,,,,0
+2021,"Campbellton (New Brunswick part) (CA), N.B.",2021S050613330,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,19.1.1.24.1,33600,,,,0
+2021,"Campbellton (Quebec part) (CA), Que.",2021S050624330,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,20.1.1.24.1,31000,,,,0
+2021,"Edmundston (CA), N.B.",2021S0504335,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,21.1.1.24.1,36400,,,,0
+2021,"Fredericton (CMA), N.B.",2021S0503320,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,22.1.1.24.1,41600,,,,0
+2021,"Miramichi (CA), N.B.",2021S0504329,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,23.1.1.24.1,37200,,,,0
+2021,"Moncton (CMA), N.B.",2021S0503305,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,24.1.1.24.1,40000,,,,0
+2021,"Saint John (CMA), N.B.",2021S0503310,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,25.1.1.24.1,40000,,,,0
+2021,Quebec,2021A000224,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,26.1.1.24.1,40800,,,,0
+2021,"Alma (CA), Que.",2021S0504410,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,27.1.1.24.1,40000,,,,0
+2021,"Amos (CA), Que.",2021S0504481,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,28.1.1.24.1,44000,,,,0
+2021,"Baie-Comeau (CA), Que.",2021S0504406,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,29.1.1.24.1,44400,,,,0
+2021,"Cowansville (CA), Que.",2021S0504437,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,30.1.1.24.1,36800,,,,0
+2021,"Dolbeau-Mistassini (CA), Que.",2021S0504411,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,31.1.1.24.1,37600,,,,0
+2021,"Drummondville (CMA), Que.",2021S0503447,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,32.1.1.24.1,38800,,,,0
+2021,"Granby (CA), Que.",2021S0504450,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,33.1.1.24.1,40000,,,,0
+2021,"Joliette (CA), Que.",2021S0504456,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,34.1.1.24.1,38000,,,,0
+2021,"Lachute (CA), Que.",2021S0504468,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,35.1.1.24.1,34000,,,,0
+2021,"Matane (CA), Que.",2021S0504403,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,36.1.1.24.1,36400,,,,0
+2021,"Montréal (CMA), Que.",2021S0503462,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,37.1.1.24.1,40800,,,,0
+2021,"Québec (CMA), Que.",2021S0503421,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,38.1.1.24.1,46000,,,,0
+2021,"Rimouski (CA), Que.",2021S0504404,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,39.1.1.24.1,40800,,,,0
+2021,"Rivière-du-Loup (CA), Que.",2021S0504405,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,40.1.1.24.1,40800,,,,0
+2021,"Rouyn-Noranda (CA), Que.",2021S0504485,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,41.1.1.24.1,44000,,,,0
+2021,"Saguenay (CMA), Que.",2021S0503408,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,42.1.1.24.1,41600,,,,0
+2021,"Saint-Georges (CA), Que.",2021S0504428,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,43.1.1.24.1,40000,,,,0
+2021,"Saint-Hyacinthe (CA), Que.",2021S0504452,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,44.1.1.24.1,38800,,,,0
+2021,"Sainte-Agathe-des-Monts (CA), Que.",2021S0504467,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,45.1.1.24.1,36400,,,,0
+2021,"Sainte-Marie (CA), Que.",2021S0504423,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,46.1.1.24.1,44000,,,,0
+2021,"Salaberry-de-Valleyfield (CA), Que.",2021S0504465,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,47.1.1.24.1,38000,,,,0
+2021,"Sept-Îles (CA), Que.",2021S0504412,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,48.1.1.24.1,45600,,,,0
+2021,"Shawinigan (CA), Que.",2021S0504444,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,49.1.1.24.1,35200,,,,0
+2021,"Sherbrooke (CMA), Que.",2021S0503433,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,50.1.1.24.1,39200,,,,0
+2021,"Sorel-Tracy (CA), Que.",2021S0504454,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,51.1.1.24.1,36800,,,,0
+2021,"Thetford Mines (CA), Que.",2021S0504430,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,52.1.1.24.1,36000,,,,0
+2021,"Trois-Rivières (CMA), Que.",2021S0503442,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,53.1.1.24.1,38800,,,,0
+2021,"Val-d'Or (CA), Que.",2021S0504480,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,54.1.1.24.1,44000,,,,0
+2021,"Victoriaville (CA), Que.",2021S0504440,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,55.1.1.24.1,38000,,,,0
+2021,Ontario,2021A000235,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,56.1.1.24.1,41200,,,,0
+2021,"Barrie (CMA), Ont.",2021S0503568,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,57.1.1.24.1,42000,,,,0
+2021,"Belleville - Quinte West (CMA), Ont.",2021S0503522,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,58.1.1.24.1,40000,,,,0
+2021,"Brantford (CMA), Ont.",2021S0503543,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,59.1.1.24.1,40800,,,,0
+2021,"Brockville (CA), Ont.",2021S0504512,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,60.1.1.24.1,38800,,,,0
+2021,"Centre Wellington (CA), Ont.",2021S0504531,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,61.1.1.24.1,47600,,,,0
+2021,"Chatham-Kent (CA), Ont.",2021S0504556,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,62.1.1.24.1,38000,,,,0
+2021,"Cobourg (CA), Ont.",2021S0504527,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,63.1.1.24.1,40800,,,,0
+2021,"Collingwood (CA), Ont.",2021S0504567,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,64.1.1.24.1,42000,,,,0
+2021,"Cornwall (CA), Ont.",2021S0504501,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,65.1.1.24.1,36800,,,,0
+2021,"Elliot Lake (CA), Ont.",2021S0504582,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,66.1.1.24.1,29800,,,,0
+2021,"Essa (CA), Ont.",2021S0504563,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,67.1.1.24.1,47200,,,,0
+2021,"Greater Sudbury (CMA), Ont.",2021S0503580,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,68.1.1.24.1,44800,,,,0
+2021,"Guelph (CMA), Ont.",2021S0503550,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,69.1.1.24.1,44800,,,,0
+2021,"Hamilton (CMA), Ont.",2021S0503537,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,70.1.1.24.1,42400,,,,0
+2021,"Hawkesbury (CA), Ont./Que.",2021S0504502,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,71.1.1.24.1,33200,,,,0
+2021,"Hawkesbury (Ontario part) (CA), Ont.",2021S050635502,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,72.1.1.24.1,33200,,,,0
+2021,"Hawkesbury (Quebec part) (CA), Que.",2021S050624502,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,73.1.1.24.1,34800,,,,0
+2021,"Ingersoll (CA), Ont.",2021S0504533,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,74.1.1.24.1,44400,,,,0
+2021,"Kawartha Lakes (CA), Ont.",2021S0504530,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,75.1.1.24.1,39200,,,,0
+2021,"Kenora (CA), Ont.",2021S0504598,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,76.1.1.24.1,48400,,,,0
+2021,"Kingston (CMA), Ont.",2021S0503521,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,77.1.1.24.1,42800,,,,0
+2021,"Kitchener - Cambridge - Waterloo (CMA), Ont.",2021S0503541,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,78.1.1.24.1,42400,,,,0
+2021,"London (CMA), Ont.",2021S0503555,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,79.1.1.24.1,40400,,,,0
+2021,"Midland (CA), Ont.",2021S0504571,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,80.1.1.24.1,36400,,,,0
+2021,"Norfolk (CA), Ont.",2021S0504547,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,81.1.1.24.1,39600,,,,0
+2021,"North Bay (CA), Ont.",2021S0504575,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,82.1.1.24.1,40400,,,,0
+2021,"Orillia (CA), Ont.",2021S0504569,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,83.1.1.24.1,37200,,,,0
+2021,"Oshawa (CMA), Ont.",2021S0503532,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,84.1.1.24.1,44000,,,,0
+2021,"Ottawa - Gatineau (CMA), Ont./Que.",2021S0503505,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,85.1.1.24.1,49200,,,,0
+2021,"Ottawa - Gatineau (Ontario part) (CMA), Ont.",2021S050535505,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,86.1.1.24.1,50000,,,,0
+2021,"Ottawa - Gatineau (Quebec part) (CMA), Que.",2021S050524505,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,87.1.1.24.1,47600,,,,0
+2021,"Owen Sound (CA), Ont.",2021S0504566,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,88.1.1.24.1,38400,,,,0
+2021,"Pembroke (CA), Ont.",2021S0504515,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,89.1.1.24.1,39600,,,,0
+2021,"Petawawa (CA), Ont.",2021S0504516,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,90.1.1.24.1,57600,,,,0
+2021,"Peterborough (CMA), Ont.",2021S0503529,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,91.1.1.24.1,39200,,,,0
+2021,"Port Hope (CA), Ont.",2021S0504528,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,92.1.1.24.1,42800,,,,0
+2021,"Sarnia (CA), Ont.",2021S0504562,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,93.1.1.24.1,42400,,,,0
+2021,"Sault Ste. Marie (CA), Ont.",2021S0504590,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,94.1.1.24.1,40800,,,,0
+2021,"St. Catharines - Niagara (CMA), Ont.",2021S0503539,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,95.1.1.24.1,38000,,,,0
+2021,"Stratford (CA), Ont.",2021S0504553,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,96.1.1.24.1,42400,,,,0
+2021,"Thunder Bay (CMA), Ont.",2021S0503595,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,97.1.1.24.1,43200,,,,0
+2021,"Tillsonburg (CA), Ont.",2021S0504546,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,98.1.1.24.1,39600,,,,0
+2021,"Timmins (CA), Ont.",2021S0504586,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,99.1.1.24.1,43600,,,,0
+2021,"Toronto (CMA), Ont.",2021S0503535,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,100.1.1.24.1,39600,,,,0
+2021,"Wasaga Beach (CA), Ont.",2021S0504565,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,101.1.1.24.1,36800,,,,0
+2021,"Windsor (CMA), Ont.",2021S0503559,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,102.1.1.24.1,40000,,,,0
+2021,"Woodstock (CA), Ont.",2021S0504544,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,103.1.1.24.1,42000,,,,0
+2021,Manitoba,2021A000246,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,104.1.1.24.1,39200,,,,0
+2021,"Brandon (CA), Man.",2021S0504610,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,105.1.1.24.1,41600,,,,0
+2021,"Portage la Prairie (CA), Man.",2021S0504607,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,106.1.1.24.1,39600,,,,0
+2021,"Steinbach (CA), Man.",2021S0504605,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,107.1.1.24.1,36400,,,,0
+2021,"Thompson (CA), Man.",2021S0504640,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,108.1.1.24.1,46400,,,,0
+2021,"Winkler (CA), Man.",2021S0504603,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,109.1.1.24.1,35200,,,,0
+2021,"Winnipeg (CMA), Man.",2021S0503602,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,110.1.1.24.1,40400,,,,0
+2021,Saskatchewan,2021A000247,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,111.1.1.24.1,42400,,,,0
+2021,"Estevan (CA), Sask.",2021S0504750,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,112.1.1.24.1,48800,,,,0
+2021,"Moose Jaw (CA), Sask.",2021S0504715,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,113.1.1.24.1,41600,,,,0
+2021,"North Battleford (CA), Sask.",2021S0504735,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,114.1.1.24.1,42400,,,,0
+2021,"Prince Albert (CA), Sask.",2021S0504745,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,115.1.1.24.1,41200,,,,0
+2021,"Regina (CMA), Sask.",2021S0503705,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,116.1.1.24.1,47200,,,,0
+2021,"Saskatoon (CMA), Sask.",2021S0503725,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,117.1.1.24.1,44000,,,,0
+2021,"Swift Current (CA), Sask.",2021S0504720,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,118.1.1.24.1,44000,,,,0
+2021,"Weyburn (CA), Sask.",2021S0504755,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,119.1.1.24.1,44800,,,,0
+2021,"Yorkton (CA), Sask.",2021S0504710,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,120.1.1.24.1,42400,,,,0
+2021,Alberta,2021A000248,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,121.1.1.24.1,44800,,,,0
+2021,"Brooks (CA), Alta.",2021S0504806,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,122.1.1.24.1,46000,,,,0
+2021,"Calgary (CMA), Alta.",2021S0503825,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,123.1.1.24.1,44800,,,,0
+2021,"Camrose (CA), Alta.",2021S0504833,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,124.1.1.24.1,41200,,,,0
+2021,"Canmore (CA), Alta.",2021S0504828,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,125.1.1.24.1,50400,,,,0
+2021,"Edmonton (CMA), Alta.",2021S0503835,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,126.1.1.24.1,45600,,,,0
+2021,"Grande Prairie (CA), Alta.",2021S0504850,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,127.1.1.24.1,49600,,,,0
+2021,"High River (CA), Alta.",2021S0504821,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,128.1.1.24.1,41200,,,,0
+2021,"Lacombe (CA), Alta.",2021S0504832,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,129.1.1.24.1,42400,,,,0
+2021,"Lethbridge (CMA), Alta.",2021S0503810,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,130.1.1.24.1,42000,,,,0
+2021,"Lloydminster (CA), Alta./Sask.",2021S0504840,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,131.1.1.24.1,46400,,,,0
+2021,"Lloydminster (Alberta part) (CA), Alta.",2021S050648840,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,132.1.1.24.1,47600,,,,0
+2021,"Lloydminster (Saskatchewan part) (CA), Sask.",2021S050647840,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,133.1.1.24.1,45200,,,,0
+2021,"Medicine Hat (CA), Alta.",2021S0504805,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,134.1.1.24.1,41200,,,,0
+2021,"Okotoks (CA), Alta.",2021S0504820,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,135.1.1.24.1,48400,,,,0
+2021,"Red Deer (CMA), Alta.",2021S0503830,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,136.1.1.24.1,42800,,,,0
+2021,"Strathmore (CA), Alta.",2021S0504826,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,137.1.1.24.1,42800,,,,0
+2021,"Sylvan Lake (CA), Alta.",2021S0504831,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,138.1.1.24.1,45200,,,,0
+2021,"Wetaskiwin (CA), Alta.",2021S0504865,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,139.1.1.24.1,38400,,,,0
+2021,"Wood Buffalo (CA), Alta.",2021S0504860,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,140.1.1.24.1,72000,,,,0
+2021,British Columbia,2021A000259,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,141.1.1.24.1,40800,,,,0
+2021,"Abbotsford - Mission (CMA), B.C.",2021S0503932,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,142.1.1.24.1,38400,,,,0
+2021,"Campbell River (CA), B.C.",2021S0504944,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,143.1.1.24.1,40000,,,,0
+2021,"Chilliwack (CMA), B.C.",2021S0503930,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,144.1.1.24.1,39600,,,,0
+2021,"Courtenay (CA), B.C.",2021S0504943,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,145.1.1.24.1,40000,,,,0
+2021,"Cranbrook (CA), B.C.",2021S0504905,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,146.1.1.24.1,42000,,,,0
+2021,"Dawson Creek (CA), B.C.",2021S0504975,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,147.1.1.24.1,44800,,,,0
+2021,"Duncan (CA), B.C.",2021S0504937,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,148.1.1.24.1,38400,,,,0
+2021,"Fort St. John (CA), B.C.",2021S0504977,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,149.1.1.24.1,52000,,,,0
+2021,"Kamloops (CMA), B.C.",2021S0503925,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,150.1.1.24.1,42800,,,,0
+2021,"Kelowna (CMA), B.C.",2021S0503915,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,151.1.1.24.1,41600,,,,0
+2021,"Ladysmith (CA), B.C.",2021S0504936,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,152.1.1.24.1,38800,,,,0
+2021,"Nanaimo (CMA), B.C.",2021S0503938,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,153.1.1.24.1,40000,,,,0
+2021,"Nelson (CA), B.C.",2021S0504907,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,154.1.1.24.1,39600,,,,0
+2021,"Parksville (CA), B.C.",2021S0504939,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,155.1.1.24.1,39200,,,,0
+2021,"Penticton (CA), B.C.",2021S0504913,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,156.1.1.24.1,38400,,,,0
+2021,"Port Alberni (CA), B.C.",2021S0504940,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,157.1.1.24.1,36800,,,,0
+2021,"Powell River (CA), B.C.",2021S0504945,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,158.1.1.24.1,36800,,,,0
+2021,"Prince George (CA), B.C.",2021S0504970,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,159.1.1.24.1,45600,,,,0
+2021,"Prince Rupert (CA), B.C.",2021S0504955,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,160.1.1.24.1,43600,,,,0
+2021,"Quesnel (CA), B.C.",2021S0504952,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,161.1.1.24.1,37200,,,,0
+2021,"Salmon Arm (CA), B.C.",2021S0504920,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,162.1.1.24.1,38400,,,,0
+2021,"Squamish (CA), B.C.",2021S0504934,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,163.1.1.24.1,50400,,,,0
+2021,"Terrace (CA), B.C.",2021S0504965,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,164.1.1.24.1,44400,,,,0
+2021,"Trail (CA), B.C.",2021S0504910,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,165.1.1.24.1,42000,,,,0
+2021,"Vancouver (CMA), B.C.",2021S0503933,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,166.1.1.24.1,40800,,,,0
+2021,"Vernon (CA), B.C.",2021S0504918,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,167.1.1.24.1,40000,,,,0
+2021,"Victoria (CMA), B.C.",2021S0503935,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,168.1.1.24.1,45600,,,,0
+2021,"Williams Lake (CA), B.C.",2021S0504950,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,169.1.1.24.1,40400,,,,0
+2021,Yukon,2021A000260,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,170.1.1.24.1,54800,,,,0
+2021,"Whitehorse (CA), Y.T.",2021S0504990,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,171.1.1.24.1,58400,,,,0
+2021,Northwest Territories,2021A000261,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,172.1.1.24.1,56800,,,,0
+2021,"Yellowknife (CA), N.W.T.",2021S0504995,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,173.1.1.24.1,72000,,,,0
+2021,Nunavut,2021A000262,Total - Age,Total - Gender,Median total income ($),2020,,0,units,0,,174.1.1.24.1,37600,,,,0

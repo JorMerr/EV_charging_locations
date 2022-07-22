@@ -12,6 +12,12 @@
 
 - **[LABOUR FORCE SURVEY](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410039101)**
 
+- **[INCOME TABLE](https://www150.statcan.gc.ca/t1/tbl1/en/cv!recreate.action?pid=9810006401&selectedNodeIds=4D24,5D1&checkedLevels=0D1,0D2,0D3,0D4,1D1,2D1&refPeriods=20210101,20210101&dimensionLayouts=layout3,layout2,layout2,layout2,layout2,layout2&vectorDisplay=false)**
+
+- **[POPULATION COUNTS](https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=9810000203)**
+
+- **[Unemployment Rate](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029401&pickMembers%5B0%5D=2.5&pickMembers%5B1%5D=3.1&pickMembers%5B2%5D=4.1&cubeTimeFrame.startMonth=12&cubeTimeFrame.startYear=2020&cubeTimeFrame.endMonth=12&cubeTimeFrame.endYear=2020&referencePeriods=20201201%2C20201201)**
+
 - **[NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)**
     @NOTE from StatsCan *To ensure the confidentiality of the Zero-Emission Vehicles (ZEV) data, a process known as Random Tabular Adjustment (RTA) was used. This changes estimates by a random amount and adds a degree of uncertainty to the accuracy of the estimate to prevent the disclosure of individual values. As a result, estimates that could disclose an individual's response are not released. (Note that if the adjusted estimates are part of a table with totals or sub-totals, the related total and sub-total estimates will also be adjusted.)*
 
@@ -20,6 +26,15 @@
 - Median Income
 - Highest Education Level Acheived
 - Electric Vehicle Sales Since 2017
+- Provincial level reimbursement plan as binary value (tax incentive for EV)
+- Cities categorized as city/village/town
+- how many green party members for each city electoral district
+- Electricity rate Kw/h
+- Infrastructure investments in EV in past 10 years
+- EV charging station forecasting
+- 
+
+
 
 ### Limitations of Data
 - EV Vehicle Sales Data is grouped geographically by Province
@@ -78,7 +93,7 @@
 - city data to display number of stations as size of point
 - bar chart to show total stations predicted in each city (or top 10)
 - line graph to show EV registrations over time
-- pie chart percentage change of EV registrations since 2011 (use annual vehicle registrations dataset, Tableau)
+- pie chart percentage change of EV registrations since 2017 (use annual vehicle registrations dataset, Tableau)
 - comparison of median income to EV registrations or charging stations
 - comparison of median education level to EV registrations or charging stations
 - 
@@ -109,21 +124,22 @@
 ### Machine Learning Model - 
 - [ ] Takes in Data from the provisional database
 - [ ] Outputs label for input data
+    - [ ] Can we acheive 95% accuracy?
 
 ### Database Integration - E
-- [ ] Sample data that mimics the expected final database structure or schema
+- [x] Sample data that mimics the expected final database structure or schema
 - [ ] Draft machine learning model is connected to the provisional database
     - [x] Machine learning model template is created
 
 ### Tasks
 - [ ] Merge J-code to main
 - [ ] Merge E-code to main
-- [ ] clean census data - E
+- [x] clean census data - E
 - [x] clean statcan EV registrations - J
-- [ ] clean statcan LFS table - E
+- [x] clean statcan LFS table - E
 - [x] filter charging station json data - J
 - [ ] Load data to S3 bucket - Both
-- [ ] import to pgAdmin for joining and extra cleaning - E
+- [x] import to pgAdmin for joining and extra cleaning - E
 - [ ] export sample table with 1000 rows to test ML Models - E
 - [ ] Check if datasets can be saved directly to S3 bucket and allow dynamic updating of database
 - [ ] Tableau dashboard
@@ -136,32 +152,33 @@
 - [ ] Description of the analysis phase of the project
 
 #### Slides
-- [ ] Presentations are drafted in Google Slides
+- [x] Presentations are drafted in Google Slides
+    - [x] [Google Slides Presentation](https://docs.google.com/presentation/d/1W5Oujguz8QI4ABw9R7OA1TJrKt9auE0PjM4C-ivxvDo/edit?usp=sharing)
 
 ### GitHub Repository
 #### Main Branch
-- [ ] all code necessary to perform exploratory analysis
-- [ ] Some code necessary to complete the machine learning portion of project
+- [x] all code necessary to perform exploratory analysis
+- [x] Some code necessary to complete the machine learning portion of project
 
 #### README.md
 - [ ] Outline of the project (this may include images, but they should be easy to follow and digest)
 
 #### Individual Branches
-- [ ] At least one branch for each team member
-- [ ] Each team member has at least four commits for the duration of the second segment (eight total commits per person)
+- [x] At least one branch for each team member
+- [x] Each team member has at least four commits for the duration of the second segment (eight total commits per person)
 
 ### Machine Learning Model
 - [ ] Description of preliminary data preprocessing
 - [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
 - [ ] Description of how data was split into training and testing sets
 - [ ] Explanation of model choice, including limitations and benefits
-    - [ ] Ideal accuracy 95%
+    - [ ] Ideal accuracy 70%
 
 ### Database integration
-- [ ] Database stores static data for use during the project
+- [x] Database stores static data for use during the project
 - [ ] Database interfaces with the project in some format (e.g., scraping updates the database)
-- [ ] Includes at least two tables (or collections, if using MongoDB)
-- [ ] Includes at least one join using the database language (not including any joins in Pandas)
+- [x] Includes at least two tables (or collections, if using MongoDB)
+- [x] Includes at least one join using the database language (not including any joins in Pandas)
 - [ ] Includes at least one connection string (using SQLAlchemy or PyMongo)
 *If using SQL database, provide ERD with relationships*
 
@@ -191,8 +208,8 @@
 - [ ] Link to Google Slides draft presentation
 
 #### Individual Branches
-- [ ] At least one branch for each team member
-- [ ] Each team member has at least four commits for the duration of the third segment (12 total commits per person)
+- [x] At least one branch for each team member
+- [x] Each team member has at least four commits for the duration of the third segment (12 total commits per person)
 
 ### Machine Learning Model
 - [ ] Description of data preprocessing
@@ -241,8 +258,8 @@
 *The descriptions and explanations required in all other project deliverables should also be in your READme.md as part of your outline, unless otherwise noted.*
 
 #### Individual Branches
-- [ ] At least one branch for each team member
-- [ ] Each team member has at least four commits for the duration of the final segment (16 total commits per person)
+- [x] At least one branch for each team member
+- [x] Each team member has at least four commits for the duration of the final segment (16 total commits per person)
 - [ ] Link to Google Slides draft presentation
 
 ### Machine Learning Model

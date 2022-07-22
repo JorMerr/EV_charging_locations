@@ -15,7 +15,9 @@ from pull_statcan_table import *
 # and table identifier from StatCan website as value
 table_dict = {
     "EV_sales_table_raw" : 20100025,
-    "LFS_table_raw" : 14100391
+    "LFS_table_raw" : 14100391,
+    "Total_Income_raw": 98100064,
+    "Population_counts_raw": 98100002
 }
 
 # Call the function for each key value pair in the table_dict
