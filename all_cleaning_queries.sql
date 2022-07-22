@@ -738,15 +738,58 @@ WHERE City LIKE '%Rivière%'
 -- number of ev cars in this particular city
 -- comparison of ev cars in city per available stations 
 
-SELECT * FROM EV_registrations_cities_table
+-- this table is about total_EV_Cars_per_city
 
-WHERE GEO LIKE '%Vancouver%'
+-- drop those with value is zer0
+
+DELETE 
+FROM EV_registrations_cities_table
+WHERE VALUE = 0
+
+
+ALTER TABLE EV_registrations_cities_table
+ADD to_drop nvarchar(250)
+
+UPDATE EV_registrations_cities_table
+SET to_drop = RIGHT(GEO,LEN(GEO) - CHARINDEX(',',GEO))
+FROM EV_registrations_cities_table;
+
+ALTER TABLE EV_registrations_cities_table
+DROP COLUMN to_drop 
+
+-- cleaning the names, like french names 
+
+UPDATE  EV_registrations_cities_table
+SET GEO =  'Hamilton'
+WHERE GEO like 'Hamilton, Ontario'
+
+SELECT *
+--,LEFT(GEO,CHARINDEX(',',GEO)) 
+,LEFT (GEO,LEN(GEO) - CHARINDEX(',',GEO)) AS to_keep
+FROM EV_registrations_cities_table;
+
+
+
+
+
+
+
+-- number of EV Vehicle in each city
+
+SELECT DISTINCT GEO , SUM(VALUE) FROM EV_registrations_cities_table
+GROUP BY GEO
+
 
 
 DROP TABLE IF EXISTS EV_registrations_cities_table
 
+SELECT  
+ GEO, Count(VALUE) as Total_stations
+FROM  EV_registrations_cities_table
+GROUP BY City
 
 
+SELECT * FROM EV_registrations_cities_table
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
@@ -755,7 +798,8 @@ DROP TABLE IF EXISTS EV_registrations_cities_table
 
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
--- STEPS 
+-- STEPS
+-- this table is bout total ev cars by province 
 -- Drop un necessary columns 
 -- change Ref_date to Year only 
 -- rename GEO column to Province
@@ -975,10 +1019,10 @@ WHERE final_table.province_name= p.Province
 
 
 -- adding median income, this is from province median income
---UPDATE final_table 
---SET final_table.City_Median_Income = 
---FROM 
---WHERE final_table.City_Median_Income= 
+UPDATE final_table 
+SET final_table.City_Median_Income =p.Median_Income
+FROM provincial_income p
+WHERE final_table.province_name= p.Province
 
 
 -- CHECKING THE DATASET
@@ -1011,4 +1055,5 @@ SELECT * FROM EV_registrations_cities_table;
 SELECT * FROM EV_stations_locations;
 SELECT * FROM incentives_table;
 SELECT * FROM provincial_unemployment_table;
+SELECT * FROM provincial_income
 SELECT * FROM final_table
