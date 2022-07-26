@@ -122,8 +122,8 @@
 - [x] Each team member has at least four commits for the duration of the first segment
 
 ### Machine Learning Model - 
-- [ ] Takes in Data from the provisional database
-- [ ] Outputs label for input data
+- [x] Takes in Data from the provisional database
+- [x] Outputs label for input data
     - [ ] Can we acheive 95% accuracy?
 
 ### Database Integration - E
@@ -147,47 +147,66 @@
 
 ## Second Segment
 ### Presentation
-#### Content
-- [ ] Description of the data exploration phase of the project
+#### Content - Jordan to write, Elysee to proofread
+- [ ] Description of the data exploration phase of the project 
 - [ ] Description of the analysis phase of the project
 
-#### Slides
+#### Slides - Elysee to draft
 - [x] Presentations are drafted in Google Slides
     - [x] [Google Slides Presentation](https://docs.google.com/presentation/d/1W5Oujguz8QI4ABw9R7OA1TJrKt9auE0PjM4C-ivxvDo/edit?usp=sharing)
+    - [ ] Add slides which include:
+        - [ ] purpose of project
+        - [ ] analysis of project
+        - [ ] model used
+        - [ ] results of the project
+        - [ ] description or images of data sources
+        - [ ] snapshots of some cleaning/code
+        - [ ] 
 
 ### GitHub Repository
 #### Main Branch
 - [x] all code necessary to perform exploratory analysis
 - [x] Some code necessary to complete the machine learning portion of project
 
-#### README.md
+#### README.md - Jordan
 - [ ] Outline of the project (this may include images, but they should be easy to follow and digest)
 
 #### Individual Branches
 - [x] At least one branch for each team member
 - [x] Each team member has at least four commits for the duration of the second segment (eight total commits per person)
 
-### Machine Learning Model
+### Machine Learning Model - Jordan
 - [ ] Description of preliminary data preprocessing
 - [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
 - [ ] Description of how data was split into training and testing sets
 - [ ] Explanation of model choice, including limitations and benefits
     - [ ] Ideal accuracy 70%
 
-### Database integration
+### Database integration - Elysee & Jordan
 - [x] Database stores static data for use during the project
 - [ ] Database interfaces with the project in some format (e.g., scraping updates the database)
 - [x] Includes at least two tables (or collections, if using MongoDB)
-- [x] Includes at least one join using the database language (not including any joins in Pandas)
-- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo)
-*If using SQL database, provide ERD with relationships*
+- [x] Includes at least one join using the database language (not including any joins in Pandas) **Used CTE method instead of join method**
+- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo) **What does connection string mean for our project?** 
+        *Set up connection to pgAdmin/SQL direct from jupyter notebook*
+*If using SQL database, provide ERD with relationships* **Elysee to create ERD**
 
-### Dashboard
+### Dashboard - Elysee
 - [ ] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
-- [ ] Description of interactive element(s)
+    - [ ] Github pages/flask/herokuapp/
+- [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app**
     - [ ] Tableau vs Interactive Website Dashboard
 
+## Tasks
+- [ ] PyCaret optimization of ml model (J)
+- [ ] Check if CTE/joins count for rubric (E)
+- [ ] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)
+- [ ] Write-ups of data cleaning and analysis (J)
+- [ ] Tableau visualizations (E)
+- [ ] ERD for SQL (E)
+- [ ] Outline of Project with placeholders for images (J)
+- [ ] 
 
 ## Third Segment
 ### Presentation
