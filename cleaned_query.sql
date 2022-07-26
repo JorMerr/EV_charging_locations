@@ -1,4 +1,9 @@
-﻿--- CLEANING THE DATA---------
+﻿-- server name 
+SELECT @@ServerName
+-- DB ev_locations_canada
+USE ev_locations_canada
+GO
+--- CLEANING THE DATA---------
 
 SELECT * FROM lfs_table;
 --SELECT * FROM income_table;
