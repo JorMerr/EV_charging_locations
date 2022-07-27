@@ -124,7 +124,7 @@
 ### Machine Learning Model - 
 - [x] Takes in Data from the provisional database
 - [x] Outputs label for input data
-    - [ ] Can we acheive 95% accuracy?
+    - [x] Can we acheive 70% accuracy?
 
 ### Database Integration - E
 - [x] Sample data that mimics the expected final database structure or schema
@@ -148,8 +148,8 @@
 ## Second Segment
 ### Presentation
 #### Content - Jordan to write, Elysee to proofread
-- [ ] Description of the data exploration phase of the project 
-- [ ] Description of the analysis phase of the project
+- [x] Description of the data exploration phase of the project 
+- [x] Description of the analysis phase of the project
 
 #### Slides - Elysee to draft
 - [x] Presentations are drafted in Google Slides
@@ -176,10 +176,18 @@
 - [x] Each team member has at least four commits for the duration of the second segment (eight total commits per person)
 
 ### Machine Learning Model - Jordan
-- [ ] Description of preliminary data preprocessing
-- [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
-- [ ] Description of how data was split into training and testing sets
-- [ ] Explanation of model choice, including limitations and benefits
+- [x] Description of preliminary data preprocessing
+- [x] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
+- [x] Description of how data was split into training and testing sets *(split 80/20 and saved as new variables for the purposes of adding model predictions back to the datasets)*
+- [x] Explanation of model choice, including limitations and benefits
+    - *Model used was RandomForestRegressor model*
+        - Reason for using this model is that when comparing models using PyCaret, this model performed regularly in top level contenders. The other model option was OrthogonalMatchingPursuit. OrthogonalMatchingPursuit when used outside of PyCaret comparison did not consistently perform to the same level at RandomForestRegressor.
+
+    - Benefits:
+        - The model can be fast to train
+        - The model works well for datasets of a relatively smaller sample size, such as what was used in our training dataset
+    - Limitations:
+        - Once trained, the potential for a high number of decision trees can slow the algorithm.
     - [x] Ideal accuracy 70%
 
 ### Database integration - Elysee & Jordan
@@ -199,13 +207,13 @@
     - [ ] Tableau vs Interactive Website Dashboard
 
 ## Tasks
-- [ ] PyCaret optimization of ml model (J)
-- [ ] Check if CTE/joins count for rubric (E)
+- [x] PyCaret optimization of ml model (J)
+- [x] Check if CTE/joins count for rubric (E)
 - [ ] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)
-- [ ] Write-ups of data cleaning and analysis (J)
+- [x] Write-ups of data cleaning and analysis (J)
 - [ ] Tableau visualizations (E)
 - [ ] ERD for SQL (E)
-- [ ] Outline of Project with placeholders for images (J)
+- [x] Outline of Project with placeholders for images (J)
 - [ ] 
 
 ## Third Segment
