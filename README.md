@@ -48,6 +48,10 @@ Our data has been collected from the following sources using the listed methods 
 
 - The full dataset was copied to retain the integrity of our master table. 
 
+- The copied table was then split using 75% of the data for training, and 25% of the data for testing. The testing data was held unseen by the machine learning model for later validation of model accuracy. Identical preprocessing steps were taken for the training and testing datasets, as outlined below.
+
+    ![SPLITTING THE DATA]()
+
 - The dataset dropped city identifier columns.
 
 - The final categorical column "incentives_status" was saved as a separate variable for the dataset. The "incentives_status" variable was then passed through to OneHotEncoder to retrieve the feature names for whether a city received provincial Electric Vehicle incentives or not.
@@ -60,9 +64,8 @@ Our data has been collected from the following sources using the listed methods 
 
     ![TARGET AND FEATURE VARIABLES]()
 
-The copied table was then split using the train_test_split utility from scikit-learn. The testing data was held unseen by the machine learning model for later validation of model accuracy.
 
-    ![SPLITTING THE DATA]()
+
 
 ### Model Choice
 We chose to use the RandomForestRegressor machine learning model. This model was chosen after having conducted some comparison of other linear regression algorithms using PyCaret. The RandomForestRegressor consistently performed as a top level contender after multiple iterations of PyCaret's <compare_models> method. 

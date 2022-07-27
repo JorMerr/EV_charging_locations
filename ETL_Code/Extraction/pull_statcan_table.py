@@ -37,7 +37,7 @@ def pull_statcan_table(table_name, table_ident):
 
     # Save DataFrame to CSV file in raw_datasets directory
     # Define file path to save data with table name from the keys in table_dict
-    filepath = Path('raw_datasets/' + table_name + file_end)
+    filepath = Path('../../Datasets/raw_datasets/' + table_name + file_end)
     # Allow folders and subfolders to be created is needed
     filepath.parent.mkdir(parents=True, exist_ok=True)
     # Save the file
