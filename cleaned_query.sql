@@ -399,6 +399,7 @@ WHERE City LIKE '%Rivière%'
 -- this table is about total_EV_Cars_per_city
 
 -- drop those with value is zer0
+DROP TABLE IF EXISTS EV_registrations_cities_table
 
 DELETE 
 FROM EV_registrations_cities_table
@@ -427,7 +428,7 @@ SELECT *
 FROM EV_registrations_cities_table;
 
 SELECT * FROM EV_registrations_cities_table
-WHERE GEO like 'Montr%'
+WHERE GEO like '%Montréal%'
 
 -- number of EV Vehicle in each city
 
@@ -435,17 +436,16 @@ SELECT DISTINCT GEO , SUM(VALUE) FROM EV_registrations_cities_table
 GROUP BY GEO
 
 
-
-DROP TABLE IF EXISTS EV_registrations_cities_table
-
 SELECT  
  GEO, Count(VALUE) as Total_stations
 FROM  EV_registrations_cities_table
-GROUP BY City
+GROUP BY GEO
 
+-- Montreal ev_registration
 
-SELECT * FROM EV_registrations_cities_table
-
+SELECT GEO, SUM(VALUE) FROM EV_registrations_cities_table
+WHERE GEO like '%Montréal%'
+GROUP BY GEO
 
 ---------------------END OF CLEANING EV_registrations_cities---------------------
 
@@ -831,8 +831,32 @@ SET final_table.Univ_diploma_Above_Bachelor_perc = p.University_certificate_dipl
 FROM  province_edu_rate p
 WHERE final_table.province_name = p.Geographic_name
 
+-- set  Meredith and Aberdeen Additional province name to Ontario and province ID to ON and Population to 1609
+UPDATE  final_table 
+SET final_table.Univ_diploma_Above_Bachelor_perc = p.University_certificate_diploma_or_degree_at_bachelor_level_or_above_5
+FROM  province_edu_rate p
+WHERE final_table.province_name = p.Geographic_name
+-- set Montreal value of ev_reg_cities
+
+
+
+UPDATE  final_table
+SET city =  'Montreal'
+WHERE city like 'Montréal-Ouest'
+-- setting the value of Montreal ev_registrations to 61203
+UPDATE  final_table
+SET City_EV_registrations =  61203
+WHERE id = 1124586170
+
+-- Droping the Montreal duplicate 
+DELETE 
+FROM final_table 
+WHERE id = 1124001742
+
+
 
 SELECT * FROM final_table
+
 
 
 --------------------------End of Cleaning Final Table---------------------------------------------------------
