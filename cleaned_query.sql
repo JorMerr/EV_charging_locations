@@ -462,13 +462,14 @@ SELECT * FROM EV_registrations_cities_table
 -- rename GEO column to Province
 -- Join to final on Province
 
+DROP TABLE IF EXISTS EV_registrations_provinces_table
 
 -- Renaming columns 
 
-sp_RENAME 'EV_registrations_provinces_table.GEO' , 'Provinces', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.VALUE' , 'Total_Ev_Cars_Per_Province', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.Geo_ID' , 'Province_ID', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.Provinces' , 'Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.GEO' , 'Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.Total' , 'Total_Ev_Cars_Per_Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.DGUID' , 'Province_ID', 'COLUMN';
+
 
 -- Drop Un Necessary columns 
 ALTER TABLE EV_registrations_provinces_table
@@ -485,8 +486,6 @@ DROP COLUMN column1
 ALTER TABLE EV_registrations_provinces_table
 ADD REF_DATE2 INT
 
-ALTER TABLE EV_registrations_provinces_table
-DROP COLUMN  YEAR 
 
 UPDATE EV_registrations_provinces_table
 SET REF_DATE2 = DATEPART(YEAR FROM REF_DATE)
@@ -505,7 +504,9 @@ SELECT DISTINCT Province
 FROM EV_registrations_provinces_table
 GROUP BY Province
 -- HAVE THE PROVINCES AND TOTAL PER YEAR, 
-
+SELECT DISTINCT Province,SUM(CAST(Total_Ev_Cars_Per_Province as int)) AS Total_Ev_prov
+FROM EV_registrations_provinces_table 
+GROUP BY Province
 
 -------------------------------------End Of Cleaning EV_registrations_provinces_table---------------
 
@@ -730,7 +731,7 @@ ADD  EV_Per_Province NVARCHAR (250)
 WITH ev_totalCTE(Province,Total_Ev_prov)
 AS
 (
-SELECT DISTINCT Province,SUM(Total_Ev_Cars_Per_Province) AS Total_Ev_prov
+SELECT DISTINCT Province,SUM(CAST(Total_Ev_Cars_Per_Province as int)) AS Total_Ev_prov
 FROM EV_registrations_provinces_table 
 GROUP BY Province
 
