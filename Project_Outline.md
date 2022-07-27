@@ -1,11 +1,11 @@
 # Final Project
 
 ## Project Goal
-    Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
+Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
 
 
-    ### What we hope to achieve:
-        - Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
+### What we hope to achieve:
+- Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
 
 ## Sources of Data
 - **[NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)**
@@ -128,22 +128,17 @@
 
 ### Database Integration - E
 - [x] Sample data that mimics the expected final database structure or schema
-- [ ] Draft machine learning model is connected to the provisional database
+- [x] Draft machine learning model is connected to the provisional database
     - [x] Machine learning model template is created
 
 ### Tasks
-- [ ] Merge J-code to main
-- [ ] Merge E-code to main
+- [x] Merge J-code to main
+- [x] Merge E-code to main
 - [x] clean census data - E
 - [x] clean statcan EV registrations - J
 - [x] clean statcan LFS table - E
 - [x] filter charging station json data - J
-- [ ] Load data to S3 bucket - Both
 - [x] import to pgAdmin for joining and extra cleaning - E
-- [ ] export sample table with 1000 rows to test ML Models - E
-- [ ] Check if datasets can be saved directly to S3 bucket and allow dynamic updating of database
-- [ ] Tableau dashboard
-    - [ ] If time, add website app
 
 ## Second Segment
 ### Presentation
@@ -169,7 +164,7 @@
 - [x] Some code necessary to complete the machine learning portion of project
 
 #### README.md - Jordan
-- [ ] Outline of the project (this may include images, but they should be easy to follow and digest)
+- [x] Outline of the project (this may include images, but they should be easy to follow and digest)
 
 #### Individual Branches
 - [x] At least one branch for each team member
@@ -203,7 +198,7 @@
 - [ ] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
     - [ ] Github pages/flask/herokuapp/
-- [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app**
+- [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
     - [ ] Tableau vs Interactive Website Dashboard
 
 ## Tasks
@@ -239,10 +234,10 @@
 - [x] Each team member has at least four commits for the duration of the third segment (12 total commits per person)
 
 ### Machine Learning Model
-- [ ] Description of data preprocessing
-- [ ] Description of feature engineering and the feature selection, including the decision-making process
-- [ ] Description of how data was split into training and testing sets
-- [ ] Explanation of model choice, including limitations and benefits
+- [x] Description of data preprocessing
+- [x] Description of feature engineering and the feature selection, including the decision-making process
+- [x] Description of how data was split into training and testing sets
+- [x] Explanation of model choice, including limitations and benefits
 - [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
 - [ ] Description of how they have trained the model thus far, and any additional training that will take place
 - [ ] Description of current accuracy score
