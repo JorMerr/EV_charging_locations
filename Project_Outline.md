@@ -1,11 +1,11 @@
 # Final Project
 
 ## Project Goal
-    Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
+Using publicly available datasets, determine how many electric vehicle charging stations can a community support?
 
 
-    ### What we hope to achieve:
-        - Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
+### What we hope to achieve:
+- Create a machine learning model that will predict the maximum number of Electric Vehicle Charging Stations that a city can support.
 
 ## Sources of Data
 - **[NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)**
@@ -122,72 +122,94 @@
 - [x] Each team member has at least four commits for the duration of the first segment
 
 ### Machine Learning Model - 
-- [ ] Takes in Data from the provisional database
-- [ ] Outputs label for input data
-    - [ ] Can we acheive 95% accuracy?
+- [x] Takes in Data from the provisional database
+- [x] Outputs label for input data
+    - [x] Can we acheive 70% accuracy?
 
 ### Database Integration - E
 - [x] Sample data that mimics the expected final database structure or schema
-- [ ] Draft machine learning model is connected to the provisional database
+- [x] Draft machine learning model is connected to the provisional database
     - [x] Machine learning model template is created
 
 ### Tasks
-- [ ] Merge J-code to main
-- [ ] Merge E-code to main
+- [x] Merge J-code to main
+- [x] Merge E-code to main
 - [x] clean census data - E
 - [x] clean statcan EV registrations - J
 - [x] clean statcan LFS table - E
 - [x] filter charging station json data - J
-- [ ] Load data to S3 bucket - Both
 - [x] import to pgAdmin for joining and extra cleaning - E
-- [ ] export sample table with 1000 rows to test ML Models - E
-- [ ] Check if datasets can be saved directly to S3 bucket and allow dynamic updating of database
-- [ ] Tableau dashboard
-    - [ ] If time, add website app
 
 ## Second Segment
 ### Presentation
-#### Content
-- [ ] Description of the data exploration phase of the project
-- [ ] Description of the analysis phase of the project
+#### Content - Jordan to write, Elysee to proofread
+- [x] Description of the data exploration phase of the project 
+- [x] Description of the analysis phase of the project
 
-#### Slides
+#### Slides - Elysee to draft
 - [x] Presentations are drafted in Google Slides
     - [x] [Google Slides Presentation](https://docs.google.com/presentation/d/1W5Oujguz8QI4ABw9R7OA1TJrKt9auE0PjM4C-ivxvDo/edit?usp=sharing)
+    - [ ] Add slides which include:
+        - [ ] purpose of project
+        - [ ] analysis of project
+        - [ ] model used
+        - [ ] results of the project
+        - [ ] description or images of data sources
+        - [ ] snapshots of some cleaning/code
+        - [ ] 
 
 ### GitHub Repository
 #### Main Branch
 - [x] all code necessary to perform exploratory analysis
 - [x] Some code necessary to complete the machine learning portion of project
 
-#### README.md
-- [ ] Outline of the project (this may include images, but they should be easy to follow and digest)
+#### README.md - Jordan
+- [x] Outline of the project (this may include images, but they should be easy to follow and digest)
 
 #### Individual Branches
 - [x] At least one branch for each team member
 - [x] Each team member has at least four commits for the duration of the second segment (eight total commits per person)
 
-### Machine Learning Model
-- [ ] Description of preliminary data preprocessing
-- [ ] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
-- [ ] Description of how data was split into training and testing sets
-- [ ] Explanation of model choice, including limitations and benefits
-    - [ ] Ideal accuracy 70%
+### Machine Learning Model - Jordan
+- [x] Description of preliminary data preprocessing
+- [x] Description of preliminary feature engineering and preliminary feature selection, including the decision-making process
+- [x] Description of how data was split into training and testing sets *(split 80/20 and saved as new variables for the purposes of adding model predictions back to the datasets)*
+- [x] Explanation of model choice, including limitations and benefits
+    - *Model used was RandomForestRegressor model*
+        - Reason for using this model is that when comparing models using PyCaret, this model performed regularly in top level contenders. The other model option was OrthogonalMatchingPursuit. OrthogonalMatchingPursuit when used outside of PyCaret comparison did not consistently perform to the same level at RandomForestRegressor.
 
-### Database integration
+    - Benefits:
+        - The model can be fast to train
+        - The model works well for datasets of a relatively smaller sample size, such as what was used in our training dataset
+    - Limitations:
+        - Once trained, the potential for a high number of decision trees can slow the algorithm.
+    - [x] Ideal accuracy 70%
+
+### Database integration - Elysee & Jordan
 - [x] Database stores static data for use during the project
 - [ ] Database interfaces with the project in some format (e.g., scraping updates the database)
 - [x] Includes at least two tables (or collections, if using MongoDB)
-- [x] Includes at least one join using the database language (not including any joins in Pandas)
-- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo)
-*If using SQL database, provide ERD with relationships*
+- [x] Includes at least one join using the database language (not including any joins in Pandas) **Used CTE method instead of join method**
+- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo) **What does connection string mean for our project?** 
+        *Set up connection to pgAdmin/SQL direct from jupyter notebook*
+*If using SQL database, provide ERD with relationships* **Elysee to create ERD**
 
-### Dashboard
+### Dashboard - Elysee
 - [ ] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
-- [ ] Description of interactive element(s)
+    - [ ] Github pages/flask/herokuapp/
+- [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
     - [ ] Tableau vs Interactive Website Dashboard
 
+## Tasks
+- [x] PyCaret optimization of ml model (J)
+- [x] Check if CTE/joins count for rubric (E)
+- [ ] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)
+- [x] Write-ups of data cleaning and analysis (J)
+- [ ] Tableau visualizations (E)
+- [ ] ERD for SQL (E)
+- [x] Outline of Project with placeholders for images (J)
+- [ ] 
 
 ## Third Segment
 ### Presentation
@@ -212,10 +234,10 @@
 - [x] Each team member has at least four commits for the duration of the third segment (12 total commits per person)
 
 ### Machine Learning Model
-- [ ] Description of data preprocessing
-- [ ] Description of feature engineering and the feature selection, including the decision-making process
-- [ ] Description of how data was split into training and testing sets
-- [ ] Explanation of model choice, including limitations and benefits
+- [x] Description of data preprocessing
+- [x] Description of feature engineering and the feature selection, including the decision-making process
+- [x] Description of how data was split into training and testing sets
+- [x] Explanation of model choice, including limitations and benefits
 - [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
 - [ ] Description of how they have trained the model thus far, and any additional training that will take place
 - [ ] Description of current accuracy score
