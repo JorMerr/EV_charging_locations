@@ -447,6 +447,8 @@ SELECT GEO, SUM(VALUE) FROM EV_registrations_cities_table
 WHERE GEO like '%Montréal%'
 GROUP BY GEO
 
+
+SELECT * FROM EV_registrations_cities_table
 ---------------------END OF CLEANING EV_registrations_cities---------------------
 
 
@@ -666,8 +668,8 @@ WHERE	f.City = s.City
 
 -- updating french names 
 UPDATE  final_table
-SET City =  'Rivière-du-Loup'
-WHERE City like 'Rivière du Loup'
+SET City =  'Saint-Jerome'
+WHERE City like 'Saint-J�r�me'
 
 
 -- adding unemployement rate to our table 
@@ -685,10 +687,19 @@ WHERE final_table.province_name= p.Province
 
 
 -- adding total number of EV cars registration in a city
-UPDATE final_table 
-SET final_table.City_EV_registrations =m.Vehicles_sold_since_2017
+WITH evregCTE(City,Vehicles_sold_since_2017)
+AS
+(
+SELECT city,Vehicles_sold_since_2017
 FROM merged_dataset_table m
-WHERE final_table.city= m.City
+)
+
+UPDATE final_table 
+SET final_table.City_EV_registrations =e.Vehicles_sold_since_2017
+FROM evregCTE e
+WHERE final_table.city= e.City
+
+
 
 -- 13.0, rename column as electricity_rate_perKwh, USE CET 
 SELECT *,
@@ -856,7 +867,7 @@ WHERE id = 1124001742
 
 
 SELECT * FROM final_table
-
+WHERE city like '%Saint-%'
 
 
 --------------------------End of Cleaning Final Table-----------------------------
@@ -889,8 +900,8 @@ FROM Testing_Station_Predictions
 
 UPDATE final_table
 SET final_table.Predicted_stations = t.predictions
-FROM final_table f,testCTE t
-WHERE	f.city = t.City
+FROM testCTE t
+WHERE	final_table.city = t.City
 
 -- joining training  data to final table 
 
@@ -903,8 +914,17 @@ FROM Training_Station_Predictions
 
 UPDATE final_table
 SET final_table.Predicted_stations = t.predictions
-FROM final_table f,trainCTE t
-WHERE	f.city = t.City
+FROM trainCTE t
+WHERE final_table.city = t.City
 
-SELECT * from final_table 
-WHERE predicted_stations IS NULL
+
+SELECT * FROM final_table
+WHERE final_table.predicted_stations IS NULL
+
+
+SELECT * FROM final_table
+WHERE City_EV_registrations = 54739
+
+DROP TABLE IF EXISTS final_table
+
+-------FINAL CLEANING-----
