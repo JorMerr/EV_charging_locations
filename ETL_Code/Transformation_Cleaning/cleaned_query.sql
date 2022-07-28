@@ -1,4 +1,9 @@
-﻿--- CLEANING THE DATA---------
+﻿-- server name 
+SELECT @@ServerName
+-- DB ev_locations_canada
+USE ev_locations_canada
+GO
+--- CLEANING THE DATA---------
 
 SELECT * FROM lfs_table;
 --SELECT * FROM income_table;
@@ -394,6 +399,7 @@ WHERE City LIKE '%Rivière%'
 -- this table is about total_EV_Cars_per_city
 
 -- drop those with value is zer0
+DROP TABLE IF EXISTS EV_registrations_cities_table
 
 DELETE 
 FROM EV_registrations_cities_table
@@ -422,7 +428,7 @@ SELECT *
 FROM EV_registrations_cities_table;
 
 SELECT * FROM EV_registrations_cities_table
-WHERE GEO like 'Montr%'
+WHERE GEO like '%Montréal%'
 
 -- number of EV Vehicle in each city
 
@@ -430,17 +436,16 @@ SELECT DISTINCT GEO , SUM(VALUE) FROM EV_registrations_cities_table
 GROUP BY GEO
 
 
-
-DROP TABLE IF EXISTS EV_registrations_cities_table
-
 SELECT  
  GEO, Count(VALUE) as Total_stations
 FROM  EV_registrations_cities_table
-GROUP BY City
+GROUP BY GEO
 
+-- Montreal ev_registration
 
-SELECT * FROM EV_registrations_cities_table
-
+SELECT GEO, SUM(VALUE) FROM EV_registrations_cities_table
+WHERE GEO like '%Montréal%'
+GROUP BY GEO
 
 ---------------------END OF CLEANING EV_registrations_cities---------------------
 
@@ -462,13 +467,14 @@ SELECT * FROM EV_registrations_cities_table
 -- rename GEO column to Province
 -- Join to final on Province
 
+DROP TABLE IF EXISTS EV_registrations_provinces_table
 
 -- Renaming columns 
 
-sp_RENAME 'EV_registrations_provinces_table.GEO' , 'Provinces', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.VALUE' , 'Total_Ev_Cars_Per_Province', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.Geo_ID' , 'Province_ID', 'COLUMN';
-sp_RENAME 'EV_registrations_provinces_table.Provinces' , 'Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.GEO' , 'Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.Total' , 'Total_Ev_Cars_Per_Province', 'COLUMN';
+sp_RENAME 'EV_registrations_provinces_table.DGUID' , 'Province_ID', 'COLUMN';
+
 
 -- Drop Un Necessary columns 
 ALTER TABLE EV_registrations_provinces_table
@@ -485,8 +491,6 @@ DROP COLUMN column1
 ALTER TABLE EV_registrations_provinces_table
 ADD REF_DATE2 INT
 
-ALTER TABLE EV_registrations_provinces_table
-DROP COLUMN  YEAR 
 
 UPDATE EV_registrations_provinces_table
 SET REF_DATE2 = DATEPART(YEAR FROM REF_DATE)
@@ -505,7 +509,9 @@ SELECT DISTINCT Province
 FROM EV_registrations_provinces_table
 GROUP BY Province
 -- HAVE THE PROVINCES AND TOTAL PER YEAR, 
-
+SELECT DISTINCT Province,SUM(CAST(Total_Ev_Cars_Per_Province as int)) AS Total_Ev_prov
+FROM EV_registrations_provinces_table 
+GROUP BY Province
 
 -------------------------------------End Of Cleaning EV_registrations_provinces_table---------------
 
@@ -730,7 +736,7 @@ ADD  EV_Per_Province NVARCHAR (250)
 WITH ev_totalCTE(Province,Total_Ev_prov)
 AS
 (
-SELECT DISTINCT Province,SUM(Total_Ev_Cars_Per_Province) AS Total_Ev_prov
+SELECT DISTINCT Province,SUM(CAST(Total_Ev_Cars_Per_Province as int)) AS Total_Ev_prov
 FROM EV_registrations_provinces_table 
 GROUP BY Province
 
@@ -826,8 +832,32 @@ SET final_table.Univ_diploma_Above_Bachelor_perc = p.University_certificate_dipl
 FROM  province_edu_rate p
 WHERE final_table.province_name = p.Geographic_name
 
+-- set  Meredith and Aberdeen Additional province name to Ontario and province ID to ON and Population to 1609
+UPDATE  final_table 
+SET final_table.Univ_diploma_Above_Bachelor_perc = p.University_certificate_diploma_or_degree_at_bachelor_level_or_above_5
+FROM  province_edu_rate p
+WHERE final_table.province_name = p.Geographic_name
+-- set Montreal value of ev_reg_cities
+
+
+
+UPDATE  final_table
+SET city =  'Montreal'
+WHERE city like 'Montréal-Ouest'
+-- setting the value of Montreal ev_registrations to 61203
+UPDATE  final_table
+SET City_EV_registrations =  61203
+WHERE id = 1124586170
+
+-- Droping the Montreal duplicate 
+DELETE 
+FROM final_table 
+WHERE id = 1124001742
+
+
 
 SELECT * FROM final_table
+
 
 
 --------------------------End of Cleaning Final Table---------------------------------------------------------
