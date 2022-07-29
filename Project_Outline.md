@@ -42,12 +42,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
     - sum total sales to have estimate of EV on road today
 - Labour Force Statistics (Features Dataset) is grouped geographically by province
 - Some provinces do not provide EV sales data to StatsCan, may need to drop these provinces from analysis
-
-### Definitions of terms
-**Community**
-
-*city*
-
+    - Alberta, Nova Scotia, Newfoundland and Labrador
 
 ## Communication Protocols
 - Slack message updates as items change

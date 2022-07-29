@@ -26,22 +26,22 @@ Our data has been collected from the following sources using the listed methods 
 - [NEW ZERO-EMISSION VEHICLE REGISTRATIONS- QUARTERLY](https://doi.org/10.25318/2010002501-eng)
     - This dataset is collected using Statistics Canada's Web Data Services public API call.
 
-    ![NEW ZEV REGISTRATIONS]()
+    ![NEW ZEV REGISTRATIONS](https://github.com/JorMerr/EV_charging_locations/blob/main/img/cleaned_new_zev_reg.JPG)
 
 
 - [NRCAN ELECTRIC CHARGING AND ALTERNATIVE FUELLING STATIONS LOCATOR](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/)
     - This dataset is collected using an API call to NREL (National Renewable Energy Library) to access their database of Alternative Fuel Stations
     - See a snapshot of the Alternative Fuelling Stations Locator below:
 
-        ![ALT STATIONS LOCATOR]()
+        ![ALT STATIONS LOCATOR](https://github.com/JorMerr/EV_charging_locations/blob/main/img/example_stations_locator.JPG)
 
-    ![STATION LOCATIONS TABLE]()
+    ![STATION LOCATIONS TABLE](https://github.com/JorMerr/EV_charging_locations/blob/main/img/cleaned_station_locations.JPG)
 
 
 
 - The final Master Table:
 
-    ![MASTER TABLE]()
+    ![MASTER TABLE](https://github.com/JorMerr/EV_charging_locations/blob/main/img/master_table.JPG)
 
 ### Preprocessing
 - Prior to the training of our machine learning model several steps of data preprocessing were completed. The master table with all of our features and our target variable was read from the S3 bucket which stores our dataset.
@@ -50,19 +50,19 @@ Our data has been collected from the following sources using the listed methods 
 
 - The copied table was then split using 75% of the data for training, and 25% of the data for testing. The testing data was held unseen by the machine learning model for later validation of model accuracy. Identical preprocessing steps were taken for the training and testing datasets, as outlined below.
 
-    ![SPLITTING THE DATA]()
+    ![SPLITTING THE DATA](https://github.com/JorMerr/EV_charging_locations/blob/main/img/train_test_split.JPG)
 
 - The dataset dropped city identifier columns.
 
 - The final categorical column "incentives_status" was saved as a separate variable for the dataset. The "incentives_status" variable was then passed through to OneHotEncoder to retrieve the feature names for whether a city received provincial Electric Vehicle incentives or not.
 
-    ![ENCODE CATEGORICAL DATA]()
+    ![ENCODE CATEGORICAL DATA](https://github.com/JorMerr/EV_charging_locations/blob/main/img/encode_cat_data.JPG)
 
 - The encoded columns were merged back to each dataset, and the original "incentives_status" was dropped alongside the "incentives_status_NO" column. Dropping the "incentives_status_NO" column was intentionally done due to the fact that the "inecentives_status_YES" column contained all the relevant information.
 
 - After merging the encoded data, the dataframe was split into our target variable column and the features columns
 
-    ![TARGET AND FEATURE VARIABLES]()
+    ![TARGET AND FEATURE VARIABLES](https://github.com/JorMerr/EV_charging_locations/blob/main/img/target_feature_vars.JPG)
 
 
 
@@ -70,9 +70,9 @@ Our data has been collected from the following sources using the listed methods 
 ### Model Choice
 We chose to use the RandomForestRegressor machine learning model. This model was chosen after having conducted some comparison of other linear regression algorithms using PyCaret. The RandomForestRegressor consistently performed as a top level contender after multiple iterations of PyCaret's <compare_models> method. 
 
-    ![PyCaret COMPARE MODELS]()
+    ![PyCaret COMPARE MODELS](https://github.com/JorMerr/EV_charging_locations/blob/main/img/pycaret_compare_models.JPG)
 
-    ![RANDOMFORESTREGRESSOR MODEL]()
+    ![RANDOMFORESTREGRESSOR MODEL](https://github.com/JorMerr/EV_charging_locations/blob/main/img/pycaret_createmodel_randomforestregressor.JPG)
 
     ![RFREG TRAIN SCORE]()
 
@@ -80,7 +80,7 @@ We chose to use the RandomForestRegressor machine learning model. This model was
 
 One other model was considered as a candidate for our purposes. The OrthogonalMatchingPursuit model performed well in some of the PyCaret comparisons, but when tuning the model using our split dataset, OrthogonalMatchingPursuit was unable to consistently perform at a minimum accuracy level of 70%.
 
-    ![PyCaret TUNED OMP]()
+    ![PyCaret TUNED OMP](https://github.com/JorMerr/EV_charging_locations/blob/main/img/pycaret_tuned_omp.JPG)
 
 
 ## The Dashboard
