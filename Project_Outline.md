@@ -188,7 +188,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
 
 ### Database integration - Elysee & Jordan
 - [x] Database stores static data for use during the project
-- [ ] Database interfaces with the project in some format (e.g., scraping updates the database)
+- [x] Database interfaces with the project in some format (e.g.,S3 bucket stores data for model preprocessing)
 - [x] Includes at least two tables (or collections, if using MongoDB)
 - [x] Includes at least one join using the database language (not including any joins in Pandas) **Used CTE method instead of join method**
 - [ ] Includes at least one connection string (using SQLAlchemy or PyMongo) **What does connection string mean for our project?** 
@@ -198,19 +198,19 @@ Using publicly available datasets, determine how many electric vehicle charging 
 ### Dashboard - Elysee
 - [x] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
-    - [ ] Github pages/flask/herokuapp/
-- [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
+    - [ ] Github pages/Tableau dashboard/herokuapp
+- [x] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
     - [x] Tableau vs Interactive Website Dashboard [Tableau Dashboards](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
 
 ## Tasks
 - [x] PyCaret optimization of ml model (J)
 - [x] Check if CTE/joins count for rubric (E)
-- [ ] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)
+- [x] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)*tableau is sufficient*
 - [x] Write-ups of data cleaning and analysis (J)
 - [x] Tableau visualizations (E)
 - [ ] ERD for SQL (E)
 - [x] Outline of Project with placeholders for images (J)
-- [ ] 
+
 
 ## Third Segment
 ### Presentation
