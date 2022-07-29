@@ -88,6 +88,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
 
 
 ### Visualizations
+
 - city data to display as map of Canada with individual points
     - some visual way of identifying existing locations vs predicted by model
 - city data to display number of stations as size of point
@@ -195,7 +196,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
 *If using SQL database, provide ERD with relationships* **Elysee to create ERD**
 
 ### Dashboard - Elysee
-- [ ] Storyboard on Google Slides
+- [ ] Storyboard on Google Slides[Tableau Dashboards](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
 - [ ] Description of the tool(s) that will be used to create the final dashboard
     - [ ] Github pages/flask/herokuapp/
 - [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*

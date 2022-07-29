@@ -883,7 +883,7 @@ WHERE city like '%Saint-%'
 
 SELECT * FROM Testing_Station_Predictions
 SELECT * FROM Training_Station_Predictions
-
+DROP TABLE IF EXISTS Testing_Station_Predictions
 -- create a new column for prediction model 
 ALTER TABLE final_table 
 ADD  Predicted_stations NVARCHAR(250)
@@ -891,40 +891,41 @@ ADD  Predicted_stations NVARCHAR(250)
 
 -- joining testing data to final table 
 
-WITH testCTE(City,predictions)
+WITH testCTE(id,City,predictions)
 AS
 (
-SELECT city,ROUND((model_predictions),0) as predictions
+SELECT id,city,ROUND((model_predictions),0) as predictions
 FROM Testing_Station_Predictions
 )
 
 UPDATE final_table
 SET final_table.Predicted_stations = t.predictions
 FROM testCTE t
-WHERE	final_table.city = t.City
+WHERE	final_table.id = t.id
 
 -- joining training  data to final table 
 
-WITH trainCTE(City,predictions)
+WITH trainCTE(id,City,predictions)
 AS
 (
-SELECT city,ROUND((model_predictions),0) as predictions
+SELECT id,city,ROUND((model_predictions),0) as predictions
 FROM Training_Station_Predictions
 )
 
 UPDATE final_table
 SET final_table.Predicted_stations = t.predictions
 FROM trainCTE t
-WHERE final_table.city = t.City
+WHERE final_table.id = t.id
 
 
 SELECT * FROM final_table
 WHERE final_table.predicted_stations IS NULL
 
 
-SELECT * FROM final_table
-WHERE City_EV_registrations = 54739
 
-DROP TABLE IF EXISTS final_table
+SELECT * FROM final_table
+
+
+
 
 -------FINAL CLEANING-----
