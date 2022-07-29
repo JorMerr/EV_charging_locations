@@ -150,14 +150,14 @@ Using publicly available datasets, determine how many electric vehicle charging 
 #### Slides - Elysee to draft
 - [x] Presentations are drafted in Google Slides
     - [x] [Google Slides Presentation](https://docs.google.com/presentation/d/1W5Oujguz8QI4ABw9R7OA1TJrKt9auE0PjM4C-ivxvDo/edit?usp=sharing)
-    - [ ] Add slides which include:
-        - [ ] purpose of project
-        - [ ] analysis of project
-        - [ ] model used
-        - [ ] results of the project
-        - [ ] description or images of data sources
-        - [ ] snapshots of some cleaning/code
-        - [ ] 
+    - [x] Add slides which include:
+        - [x] purpose of project
+        - [x] analysis of project
+        - [x] model used
+        - [x] results of the project
+        - [x] description or images of data sources
+        - [x] snapshots of some cleaning/code
+        
 
 ### GitHub Repository
 #### Main Branch
@@ -196,18 +196,18 @@ Using publicly available datasets, determine how many electric vehicle charging 
 *If using SQL database, provide ERD with relationships* **Elysee to create ERD**
 
 ### Dashboard - Elysee
-- [ ] Storyboard on Google Slides[Tableau Dashboards](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
+- [x] Storyboard on Google Slides
 - [ ] Description of the tool(s) that will be used to create the final dashboard
     - [ ] Github pages/flask/herokuapp/
 - [ ] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
-    - [ ] Tableau vs Interactive Website Dashboard
+    - [x] Tableau vs Interactive Website Dashboard [Tableau Dashboards](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
 
 ## Tasks
 - [x] PyCaret optimization of ml model (J)
 - [x] Check if CTE/joins count for rubric (E)
 - [ ] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)
 - [x] Write-ups of data cleaning and analysis (J)
-- [ ] Tableau visualizations (E)
+- [x] Tableau visualizations (E)
 - [ ] ERD for SQL (E)
 - [x] Outline of Project with placeholders for images (J)
 - [ ] 
