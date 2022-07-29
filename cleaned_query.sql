@@ -4,19 +4,6 @@ SELECT @@ServerName
 USE ev_locations_canada
 GO
 --- CLEANING THE DATA---------
-
-SELECT * FROM lfs_table;
---SELECT * FROM income_table;
-SELECT * FROM province_population_table;
-SELECT * FROM EV_registrations_provinces_table;
-SELECT * FROM EV_registrations_cities_table;
-SELECT * FROM EV_stations_locations;
-SELECT * FROM incentives_table;
-SELECT * FROM provincial_unemployment_table;
-SELECT * FROM provincial_income
-SELECT * FROM final_table
-SELECT * FROM merged_dataset_table
-
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
