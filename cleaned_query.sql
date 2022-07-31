@@ -293,6 +293,10 @@ WHERE Province = 'BC'
 ALTER TABLE EV_stations_locations
 DROP COLUMN Country,Column1
 
+ALTER TABLE EV_stations_locations
+DROP COLUMN Total_stations
+
+
 -- Renaming ID column to station id
 sp_RENAME 'EV_stations_locations.ID' , 'Stations_ID', 'COLUMN';
 
@@ -415,6 +419,9 @@ FROM EV_registrations_cities_table;
 
 ALTER TABLE EV_registrations_cities_table
 DROP COLUMN to_drop 
+
+ALTER TABLE EV_registrations_cities_table
+DROP COLUMN column1
 
 -- cleaning the names, like french names 
 
