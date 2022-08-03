@@ -248,9 +248,9 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] At least one interactive element
 
 ## Tasks
-- [ ] Make connection to AWS database > pgAdmin > ML model (E)
+- [x] Make connection to AWS database > pgAdmin > ML model (E)
 - [ ] Complete README Project outline (J)
-- [ ] Generate Feature Importance table (J)
+- [x] Generate Feature Importance table (J)
 - [ ] Create requirements.txt file (J)
     - in order for API call to NRCAN Station Locations to work, user must save an API key in config.py file
     - 
