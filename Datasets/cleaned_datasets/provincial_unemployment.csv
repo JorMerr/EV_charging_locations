@@ -1,12 +1,12 @@
-,Province,City_ID,Unemployment_rate(%)
-0,Canada,2016A000011124,8.7
-1,Newfoundland and Labrador,2016A000210,12.5
-3,Prince Edward Island,2016A000211,10.1
-4,Nova Scotia,2016A000212,7.9
-6,New Brunswick,2016A000213,9.6
-9,Quebec,2016A000224,7.2
-15,Ontario,2016A000235,9.4
-33,Manitoba,2016A000246,7.6
-35,Saskatchewan,2016A000247,7.0
-38,Alberta,2016A000248,10.9
-41,British Columbia,2016A000259,7.4
+Province,City_ID,Unemployment_rate(%)
+Canada,2016A000011124,8.7
+Newfoundland and Labrador,2016A000210,12.5
+Prince Edward Island,2016A000211,10.1
+Nova Scotia,2016A000212,7.9
+New Brunswick,2016A000213,9.6
+Quebec,2016A000224,7.2
+Ontario,2016A000235,9.4
+Manitoba,2016A000246,7.6
+Saskatchewan,2016A000247,7
+Alberta,2016A000248,10.9
+British Columbia,2016A000259,7.4
