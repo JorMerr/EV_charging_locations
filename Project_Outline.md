@@ -203,27 +203,27 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)*tableau is sufficient*
 - [x] Write-ups of data cleaning and analysis (J)
 - [x] Tableau visualizations (E)
-- [ ] ERD for SQL (E)
+- [x] ERD for SQL (E)
 - [x] Outline of Project with placeholders for images (J)
 
 
 ## Third Segment
 ### Presentation
 #### Content
-- [ ] Technologies, languages, tools, and algorithms used throughout the project 
+- [x] Technologies, languages, tools, and algorithms used throughout the project 
 
 #### Slides
-- [ ] Presentations are drafted in Google Slides
+- [x] Presentations are drafted in Google Slides
 
 ### GitHub Repository
 #### Main Branch
-- [ ] All code necessary to perform exploratory analysis
-- [ ] Most code necessary to complete the machine learning portion of the project
+- [x] All code necessary to perform exploratory analysis
+- [x] Most code necessary to complete the machine learning portion of the project
 
 #### README.md
-- [ ] Description of the communication protocols has been removed
+- [x] Description of the communication protocols has been removed
 - [ ] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
-- [ ] Link to Google Slides draft presentation
+- [x] Link to Google Slides draft presentation
 
 #### Individual Branches
 - [x] At least one branch for each team member
@@ -236,18 +236,40 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Explanation of model choice, including limitations and benefits
 - [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
 - [ ] Description of how they have trained the model thus far, and any additional training that will take place
-- [ ] Description of current accuracy score
+- [ ] Save Feature Importance table and use in presentation
+- [x] Description of current accuracy score
 *Additionally, the model obviously addresses the question or problem the team is solving.*
 
 ### Database
 
 ### Dashboard
-- [ ] Images from the initial analysis
-- [ ] Data (images or report) from the machine learning task
-- [ ] At least one interactive element
+- [x] Images from the initial analysis
+- [x] Data (images or report) from the machine learning task
+- [x] At least one interactive element
+
+## Tasks
+- [ ] Make connection to AWS database > pgAdmin > ML model (E)
+- [ ] Complete README Project outline (J)
+- [ ] Generate Feature Importance table (J)
+- [ ] Create requirements.txt file (J)
+    - in order for API call to NRCAN Station Locations to work, user must save an API key in config.py file
+    - 
+- [ ] Update Google Slides to include 
+    - [x] current accuracy of the model and original target
+    - [x] Add result of the analysis
+    - [x] Recommendations for future analysis
+    - [ ] Any changes to our project?
+    - [ ] stock photos to fill out some slides
+- [ ] Presentation
+    - [ ] Primarily images
+    - [ ] interactivity of dashboard demo
+    - [ ] Presentation time approx 15-20 minutes, 10 minutes Q&A
+    - [ ] Create Speaker Notes
+    - [ ] 
 
 ## Fourth Segment
 ### Presentation
+**PRESENTATION WILL BE AROUND 30 MINUTES INCLUDING Q&A**
 #### Content
 - [ ] Result of the analysis
 - [ ] Recommendation for future analysis
@@ -264,27 +286,27 @@ Using publicly available datasets, determine how many electric vehicle charging 
 
 ### GitHub Repository
 #### Main Branch
-- [ ] All code necessary to perform exploratory analysis
+- [x] All code necessary to perform exploratory analysis
 - [ ] All code necessary to complete machine learning portion of project
-- [ ] Any images that have been created (at least three)
+- [x] Any images that have been created (at least three)
 - [ ] Requirements.txt file
 
 #### README.md
 - [ ] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
-- [ ] Link to dashboard (or link to video of dashboard demonstration)
-- [ ] Link to Google Slides presentation
+- [x] Link to dashboard (or link to video of dashboard demonstration)
+- [x] Link to Google Slides presentation
 *The descriptions and explanations required in all other project deliverables should also be in your READme.md as part of your outline, unless otherwise noted.*
 
 #### Individual Branches
 - [x] At least one branch for each team member
 - [x] Each team member has at least four commits for the duration of the final segment (16 total commits per person)
-- [ ] Link to Google Slides draft presentation
+- [x] Link to Google Slides draft presentation
 
 ### Machine Learning Model
-- [ ] Description of data preprocessing
-- [ ] Description of feature engineering and the feature selection, including the decision-making process
-- [ ] Description of how data was split into training and testing sets
-- [ ] Explanation of model choice, including limitations and benefits
+- [x] Description of data preprocessing
+- [x] Description of feature engineering and the feature selection, including the decision-making process
+- [x] Description of how data was split into training and testing sets
+- [x] Explanation of model choice, including limitations and benefits
 - [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
 - [ ] Description of how the model was trained (or retrained, if the team is using an existing model)
 - [ ] Description and explanation of model's confusion matrix, including final accuracy score
@@ -293,15 +315,15 @@ Using publicly available datasets, determine how many electric vehicle charging 
 *If statistical analysis is not included as part of the current analysis, the team should describe how it would be included in the next phases of the project.*
 
 ### Database Integration
-- [ ] Database stores static data for use during the project
-- [ ] Database interfaces with the project in some format (e.g., scraping updates the database)
-- [ ] Includes at least two tables (or collections, if using MongoDB)
-- [ ] Includes at least one join using the database language (not including any joins in Pandas)
-- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo)
+- [x] Database stores static data for use during the project
+- [x] Database interfaces with the project in some format (e.g., scraping updates the database)
+- [x] Includes at least two tables (or collections, if using MongoDB)
+- [x] Includes at least one join using the database language (not including any joins in Pandas)
+- [x] Includes at least one connection string (using SQLAlchemy or PyMongo)
 *If you use a SQL database, you must provide your ERD with relationships.*
 
 ### Dashboard
-- [ ] Images from the initial analysis
-- [ ] Data (images or report) from the machine learning task
-- [ ] At least one interactive element
+- [x] Images from the initial analysis
+- [x] Data (images or report) from the machine learning task
+- [x] At least one interactive element
 *Either the dashboard is published or the submission includes a screen capture video of it in action.*

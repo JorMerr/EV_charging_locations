@@ -84,26 +84,5 @@ One other model was considered as a candidate for our purposes. The OrthogonalMa
 
 
 ## The Dashboard
-Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+In order to provide an interactive dashboard for exploring our data features and predictions, we have created a Tableau Dashboard, which can be found at [this link](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
 
-
-
-
-## Communication Protocols
-This is a brief outline of the communication protocols for this project. It outlines the frequency, purpose, and method of communication established by the team to ensure consistent communication between the project partners.
-### Project Team Meetings
-- Regular working meetings Monday and Wednesday 7pm to 9pm
-    - Work collaboratively to develop the project
-    - Discuss dataset sharing, or merging of GitHub branches to main branch
-    - Review and select visualizations of the project
-- Additional progress meetings Tuesdays and Thursdays at 7pm
-    - Video call meeting
-    - Meet for one hour to discuss:
-        - progress on individual tasks
-        - Merge plans from branches to main
-        - Review the combined dataset
-        - Plan next steps of the project
-        - Discuss any challenges or hurdles
-
-### Project Minor Updates
-- Slack message to discuss minor updates and progress checkmarks
