@@ -208,7 +208,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Review Herokuapp and see if we want to use that or GitHub pages and Bootstrap for our dashboard (E)*tableau is sufficient*
 - [x] Write-ups of data cleaning and analysis (J)
 - [x] Tableau visualizations (E)
-- [ ] ERD for SQL (E)
+- [x] ERD for SQL (E)
 - [x] Outline of Project with placeholders for images (J)
 
 
