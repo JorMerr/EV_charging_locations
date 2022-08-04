@@ -25,6 +25,9 @@ Canada,provinces,territories,census divisions(CDs),census subdivisions and disse
 Income of individuals by age group, sex and income source, Canada, provinces and selected census metropolitan areas
 - [individual_Income] : https://doi.org/10.25318/1110023901-eng
 
+In place of the above income dataset, the source we used was the following table downloaded as a flat CSV file from StatCan:
+- [Median_Income](https://www150.statcan.gc.ca/t1/tbl1/en/cv!recreate.action?pid=9810006401&selectedNodeIds=4D24,5D1&checkedLevels=0D1,0D2,0D3,0D4,1D1,2D1&refPeriods=20210101,20210101&dimensionLayouts=layout3,layout2,layout2,layout2,layout2,layout2&vectorDisplay=false)
+
 # S3 bucket
 
 - all data to be downloaded and put in s3 bucket after communicating with Jordan
