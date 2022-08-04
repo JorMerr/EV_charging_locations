@@ -186,14 +186,14 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Database interfaces with the project in some format (e.g.,S3 bucket stores data for model preprocessing)
 - [x] Includes at least two tables (or collections, if using MongoDB)
 - [x] Includes at least one join using the database language (not including any joins in Pandas) **Used CTE method instead of join method**
-- [ ] Includes at least one connection string (using SQLAlchemy or PyMongo) **What does connection string mean for our project?** 
+- [x] Includes at least one connection string (using SQLAlchemy or PyMongo) **What does connection string mean for our project?** 
         *Set up connection to pgAdmin/SQL direct from jupyter notebook*
 *If using SQL database, provide ERD with relationships* **Elysee to create ERD**
 
 ### Dashboard - Elysee
 - [x] Storyboard on Google Slides
-- [ ] Description of the tool(s) that will be used to create the final dashboard
-    - [ ] Github pages/Tableau dashboard/herokuapp
+- [x] Description of the tool(s) that will be used to create the final dashboard
+    - [x] Github pages/Tableau dashboard/herokuapp
 - [x] Description of interactive element(s) **Will interactivity of Tableau be sufficient, or do we need a flask app** *tableau is sufficient*
     - [x] Tableau vs Interactive Website Dashboard [Tableau Dashboards](https://public.tableau.com/app/profile/elysee.manzi/viz/Electric_Vehicle_Canada/Dashboard1)
 
@@ -222,7 +222,7 @@ Using publicly available datasets, determine how many electric vehicle charging 
 
 #### README.md
 - [x] Description of the communication protocols has been removed
-- [ ] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
+- [x] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
 - [x] Link to Google Slides draft presentation
 
 #### Individual Branches
@@ -234,9 +234,14 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Description of feature engineering and the feature selection, including the decision-making process
 - [x] Description of how data was split into training and testing sets
 - [x] Explanation of model choice, including limitations and benefits
-- [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-- [ ] Description of how they have trained the model thus far, and any additional training that will take place
-- [ ] Save Feature Importance table and use in presentation
+- [x] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+    - Used RandomForestRegressor model
+    - no change to model choice between Segment 2 and Segment 3, confirmed that OMP model was not meeting accuracy target
+    - Used PyCaret to determine best model. Attempted to tune OrthogonalMatchingPursuit model, accuracy not sufficient
+- [x] Description of how they have trained the model thus far, and any additional training that will take place
+    - Used standard train_test_split method on the dataset, set 75/25 split train/test
+    - Compared model predictions of both the training and testing sets to the current EV stations
+- [x] Save Feature Importance table and use in presentation
 - [x] Description of current accuracy score
 *Additionally, the model obviously addresses the question or problem the team is solving.*
 
@@ -249,10 +254,11 @@ Using publicly available datasets, determine how many electric vehicle charging 
 
 ## Tasks
 - [x] Make connection to AWS database > pgAdmin > ML model (E)
-- [ ] Complete README Project outline (J)
+- [x] Complete README Project outline (J)
 - [x] Generate Feature Importance table (J)
-- [ ] Create requirements.txt file (J)
+- [x] Create requirements.txt file (J)
     - in order for API call to NRCAN Station Locations to work, user must save an API key in config.py file
+    - must access AWS Database for machine learning model data preprocessing and training. password is saved in a config file which was not tracked to GitHub repo. The CSV file used to test the ML model can be found at [this S3 bucket link](https://ev-project-datasets.s3.us-east-2.amazonaws.com/clean_table.csv)
     - 
 - [ ] Update Google Slides to include 
     - [x] current accuracy of the model and original target
@@ -261,8 +267,8 @@ Using publicly available datasets, determine how many electric vehicle charging 
     - [ ] Any changes to our project?
     - [ ] stock photos to fill out some slides
 - [ ] Presentation
-    - [ ] Primarily images
-    - [ ] interactivity of dashboard demo
+    - [x] Primarily images
+    - [x] interactivity of dashboard demo (E)
     - [ ] Presentation time approx 15-20 minutes, 10 minutes Q&A
     - [ ] Create Speaker Notes
     - [ ] 
@@ -271,13 +277,13 @@ Using publicly available datasets, determine how many electric vehicle charging 
 ### Presentation
 **PRESENTATION WILL BE AROUND 30 MINUTES INCLUDING Q&A**
 #### Content
-- [ ] Result of the analysis
-- [ ] Recommendation for future analysis
+- [x] Result of the analysis
+- [x] Recommendation for future analysis
 - [ ] Anything the team would have done differently
 
 #### Slides
-- [ ] Slides are primarly images or graphics (rather than primarly text)
-- [ ] Images are clear, in high-definition, and directly illustrative of subject matter
+- [x] Slides are primarly images or graphics (rather than primarly text)
+- [x] Images are clear, in high-definition, and directly illustrative of subject matter
 
 #### Live Presentation
 - [ ] Demonstrates the interactivity of the dashboard in real time
@@ -287,12 +293,12 @@ Using publicly available datasets, determine how many electric vehicle charging 
 ### GitHub Repository
 #### Main Branch
 - [x] All code necessary to perform exploratory analysis
-- [ ] All code necessary to complete machine learning portion of project
+- [x] All code necessary to complete machine learning portion of project
 - [x] Any images that have been created (at least three)
-- [ ] Requirements.txt file
+- [x] Requirements.txt file
 
 #### README.md
-- [ ] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
+- [x] Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
 - [x] Link to dashboard (or link to video of dashboard demonstration)
 - [x] Link to Google Slides presentation
 *The descriptions and explanations required in all other project deliverables should also be in your READme.md as part of your outline, unless otherwise noted.*
@@ -307,9 +313,9 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Description of feature engineering and the feature selection, including the decision-making process
 - [x] Description of how data was split into training and testing sets
 - [x] Explanation of model choice, including limitations and benefits
-- [ ] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-- [ ] Description of how the model was trained (or retrained, if the team is using an existing model)
-- [ ] Description and explanation of model's confusion matrix, including final accuracy score
+- [x] Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+- [x] Description of how the model was trained (or retrained, if the team is using an existing model)
+- [x] Description and explanation of model's confusion matrix, including final accuracy score
 **Additionally, the model obviously addresses the question or problem the team is solving.**
 
 *If statistical analysis is not included as part of the current analysis, the team should describe how it would be included in the next phases of the project.*
