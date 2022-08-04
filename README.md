@@ -46,7 +46,7 @@ Our data has been collected from the following sources using the listed methods 
 #### Limitations of our Data
 - The EV Vehicle Registrations Data is grouped geographically by Province and dates back to 2017. The sum total of registrations was calculated for each location which provided data to estimate the current number of electric vehicles on the road in each province.
 - Some provinces do not provide EV registration data to StatsCan and as such, will impact the end result of our model predictions. The provinces which have not shared registration data of electric vehicles are Alberta, Nova Scotia, and Newfoundland and Labrador.
-- Median Income was not available for all cities in our dataset. In order to eliminate null values, and retain as much of our station locations data as possible, we elected to use the provincial value for any null values.
+- Median Income was not available for all cities in our dataset. In order to eliminate null values, and retain as much of our station locations data as possible, we elected to use the average provincial value for any null values.
 - Unemployment data was not readily accessible for all cities in our station locations dataset. In order to maintain our station locations data we elected to use a provincial average to replace null values.
 - The electricity rates included in our dataset use provincial data. This provides a simple way to collect data as an average value. This data does not include any electricity company rates that are more localized than the provincial average such as HydroOttawa, or Rideau St.Lawrence Distribution Inc. in Ontario.
 - Our education level dataset uses provincial averages in place of specific levels of education acheived for each city.

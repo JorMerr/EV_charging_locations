@@ -80,7 +80,7 @@ The features we chose to use for our machine learning model and the assumptions 
     
 
 ### Data Testing and Training Split
-Our dataset was split as 80% used for training, and 20% used for testing the accuracy of the model. This split was chosen as it would provide sufficient rows of data to train the model at over 1000 rows. This also left nearly 350 rows for our testing dataset. 
+Our dataset was split as 75% for training and 25% for testing. 
 
 
 ### Model Choice
@@ -89,6 +89,6 @@ We chose to use the RandomForestRegressor machine learning model. This model was
 One other model was considered as a candidate for our purposes. The OrthogonalMatchingPursuit model performed well in some of the PyCaret comparisons, but when tuning the model using our split dataset, OrthogonalMatchingPursuit was unable to consistently perform at a minimum accuracy level of 70%.
 
 #### Benefits
-The benefits of using the RandomForestRegressor model is that is can be very quick to train this model. Our dataset, being of a relatively smaller sample size, was suitable for this type of model to be able to provice quick and accurate predictions.
+The benefits of using the RandomForestRegressor model is that is can be very quick to train this model. Our dataset, being of a relatively smaller sample size, was suitable for this type of model to be able to provide quick and accurate predictions.
 #### Limitations
-The RandomForestRegressor model's limiation is that with larger datasets the trained model may require a higher number of decision trees and will slow down in real-world application of big data.
+The RandomForestRegressor model's limitation is that with larger datasets the trained model may require a higher number of decision trees and will slow down in real-world application of big data.

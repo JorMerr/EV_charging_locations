@@ -265,12 +265,12 @@ Using publicly available datasets, determine how many electric vehicle charging 
     - [x] Add result of the analysis
     - [x] Recommendations for future analysis
     - [ ] Any changes to our project?
-    - [ ] stock photos to fill out some slides
+    - [x] stock photos to fill out some slides
 - [ ] Presentation
     - [x] Primarily images
     - [x] interactivity of dashboard demo (E)
-    - [ ] Presentation time approx 15-20 minutes, 10 minutes Q&A
-    - [ ] Create Speaker Notes
+    - [x] Presentation time approx 15-20 minutes, 10 minutes Q&A
+    - [x] Create Speaker Notes
     - [ ] 
 
 ## Fourth Segment
@@ -286,9 +286,9 @@ Using publicly available datasets, determine how many electric vehicle charging 
 - [x] Images are clear, in high-definition, and directly illustrative of subject matter
 
 #### Live Presentation
-- [ ] Demonstrates the interactivity of the dashboard in real time
+- [x] Demonstrates the interactivity of the dashboard in real time
 - [ ] Adheres to the time limits provided by intructor
-- [ ] Includes speaker notes, flashcards, or a video of the presentation rehearsal
+- [x] Includes speaker notes, flashcards, or a video of the presentation rehearsal
 
 ### GitHub Repository
 #### Main Branch
